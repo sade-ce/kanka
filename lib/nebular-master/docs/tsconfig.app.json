@@ -1,0 +1,39 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "outDir": "../out-tsc/app",
+    "target": "es5",
+    "module": "es2015",
+    "baseUrl": ".",
+    "types": [],
+    "paths": {
+      "@nebular/theme": ["../src/framework/theme/public_api.ts"],
+      "@nebular/auth": ["../src/framework/auth/public_api.ts"],
+      "@nebular/security": ["../src/framework/security/public_api.ts"],
+      "@nebular/eva-icons": ["../src/framework/eva-icons/public_api.ts"]
+    }
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts",
+    "../src/framework/**/*.spec.ts",
+    "assets/**/*.ts",
+    "dist/**/*",
+    "../src/framework/**/schematics/**/*"
+  ],
+  "include": [
+    "../docs/**/*",
+    "../src/playground/**/*",
+    "../src/framework/**/*",
+    "../src/app/dynamic.component.ts"
+  ]
+}
