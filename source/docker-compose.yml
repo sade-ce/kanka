@@ -1,5 +1,5 @@
-# Run docker-compose build
-# Run docker-compose up
+#   docker-compose build
+#   docker-compose up
 
 version: '3.7'
 
