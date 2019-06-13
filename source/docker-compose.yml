@@ -30,8 +30,8 @@ services:
      container_name: frontend
      image: frontend
      build:
-       context: .
-       dockerfile: frontend/nginx.dockerfile
+       context: ./frontend
+       dockerfile: nginx.dockerfile
      ports:
        - "80:80"
        - "443:443"
