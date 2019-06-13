@@ -1,0 +1,43 @@
+# Run docker-compose build
+# Run docker-compose up
+
+version: '3.7'
+
+services:
+
+  web:
+    container_name: 'backend'
+    image: 'backend'
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/backend
+    ports:
+     - "5000:5000"
+    depends_on:
+     - "postgres"
+    networks:
+      - app-network
+  postgres:
+    container_name: 'postgres'
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    networks:
+      - app-network
+  nginx:
+     container_name: frontend
+     image: frontend
+     build:
+       context: .
+       dockerfile: .frontend/nginx.dockerfile
+     ports:
+       - "80:80"
+       - "443:443"
+       
+     networks:
+     - app-network
+networks:
+   app-network:
+     driver: bridge
