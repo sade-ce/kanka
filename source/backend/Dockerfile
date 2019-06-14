@@ -1,14 +1,19 @@
  
-FROM microsoft/dotnet:2.2-sdk
 
-LABEL author="zinderud"
-ENV DOTNET_USE_POLLING_FILE_WATCHER=1
-ENV ASPNETCORE_URLS=http://*:5000
 
-WORKDIR /var/www/backend
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
+WORKDIR /app
 
-COPY . .
+COPY *.csproj ./
+RUN dotnet restore # "backend/backend.csproj"
+COPY . ./
 
-EXPOSE 5000
+RUN dotnet publish -c Release -o out
 
-CMD ["/bin/bash", "-c", "dotnet restore && dotnet watch run"]
+#Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "backend.dll"]
+# docker build -t backend .
+# docker run  backend -p 8000:80 backend:latest

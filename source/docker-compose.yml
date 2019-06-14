@@ -12,7 +12,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - .:/var/www/backend
+      - ./backend:/var/www/backend
     ports:
      - "5000:5000"
     depends_on:
