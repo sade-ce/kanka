@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj": {}
+    "/var/www/backend/backend.csproj": {}
   },
   "projects": {
-    "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj": {
+    "/var/www/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj",
+        "projectUniqueName": "/var/www/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj",
-        "packagesPath": "/home/onur/.nuget/packages/",
-        "outputPath": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/obj/",
+        "projectPath": "/var/www/backend/backend.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/var/www/backend/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/onur/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -45,16 +45,19 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
-            "Microsoft.AspNetCore.Razor.Design": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
             }
           },
           "imports": [
