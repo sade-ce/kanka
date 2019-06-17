@@ -5,6 +5,9 @@ import { AuthModule } from './@auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ThemeModule } from './@theme/theme.module';
+import { CoreModule } from './@core/core.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -12,8 +15,10 @@ import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NbThemeModule.forRoot(),
-    NbLayoutModule
+    NgbModule.forRoot(),
+    ThemeModule.forRoot(),
+    AuthModule.forRoot(),
+    CoreModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
