@@ -4,9 +4,11 @@
     <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_.19.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
       <e p="Controllers" t="Include">
         <e p="ValuesController.cs" t="Include" />
       </e>
+      <e p="Dockerfile" t="Include" />
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
         <e p="launchSettings.json" t="Include" />
@@ -24,6 +26,7 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="readme.md" t="Include" />
     </e>
   </component>
 </project>

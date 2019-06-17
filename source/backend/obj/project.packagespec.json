@@ -1,13 +1,13 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj",
+    "projectUniqueName": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj",
     "projectName": "backend",
-    "projectPath": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj",
-    "outputPath": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/obj/",
+    "projectPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj",
+    "outputPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
-      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      "/home/ism-ubuntu-onur/dotnet/sdk/NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
       "netcoreapp2.2"
@@ -35,16 +35,19 @@
           "version": "[2.2.0, )",
           "autoReferenced": true
         },
-        "Microsoft.AspNetCore.Razor.Design": {
-          "suppressParent": "All",
-          "target": "Package",
-          "version": "[2.2.0, )"
-        },
         "Microsoft.NETCore.App": {
           "suppressParent": "All",
           "target": "Package",
           "version": "[2.2.0, )",
           "autoReferenced": true
+        },
+        "Npgsql.EntityFrameworkCore.PostgreSQL": {
+          "target": "Package",
+          "version": "[2.2.4, )"
+        },
+        "Swashbuckle.AspNetCore": {
+          "target": "Package",
+          "version": "[4.0.1, )"
         }
       },
       "imports": [
