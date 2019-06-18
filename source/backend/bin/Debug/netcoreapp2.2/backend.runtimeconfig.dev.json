@@ -1,9 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/ism-ubuntu-onur/.dotnet/store/|arch|/|tfm|",
-      "/home/ism-ubuntu-onur/.nuget/packages",
-      "/home/ism-ubuntu-onur/dotnet/sdk/NuGetFallbackFolder"
+      "/root/.dotnet/store/|arch|/|tfm|",
+      "/root/.nuget/packages",
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
     ]
   }
 }

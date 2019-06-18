@@ -5,19 +5,127 @@
     <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_.19.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p=".gitignore" t="Include" />
+      <e p="ApplicationDbContext.cs" t="Include" />
       <e p="Controllers" t="Include">
+        <e p="AccountController.cs" t="Include" />
+        <e p="AgencyController.cs" t="Include" />
+        <e p="BaseController.cs" t="Include" />
+        <e p="CitizenshipController.cs" t="Include" />
+        <e p="CountryController.cs" t="Include" />
+        <e p="CurrencyController.cs" t="Include" />
+        <e p="FileController.cs" t="Include" />
+        <e p="GuestController.cs" t="Include" />
+        <e p="InvoiceController.cs" t="Include" />
+        <e p="ReservationController.cs" t="Include" />
+        <e p="RoleController.cs" t="Include" />
+        <e p="RoomController.cs" t="Include" />
+        <e p="UserController.cs" t="Include" />
         <e p="ValuesController.cs" t="Include" />
       </e>
+      <e p="Data" t="Include">
+        <e p="Seed.cs" t="Include" />
+      </e>
       <e p="Dockerfile" t="Include" />
+      <e p="Enums" t="Include">
+        <e p="Language.cs" t="Include" />
+        <e p="Vote.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20190618192027_first.Designer.cs" t="Include" />
+        <e p="20190618192027_first.cs" t="Include" />
+        <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="ApplicationRole.cs" t="Include" />
+        <e p="ApplicationUser.cs" t="Include" />
+        <e p="BaseModel.cs" t="Include" />
+        <e p="Enums" t="Include">
+          <e p="Period.cs" t="Include" />
+          <e p="State.cs" t="Include" />
+        </e>
+        <e p="GuestReservation.cs" t="Include" />
+        <e p="Process.cs" t="Include" />
+        <e p="ProcessResult.cs" t="Include" />
+        <e p="agency.cs" t="Include" />
+        <e p="citizenship.cs" t="Include" />
+        <e p="country.cs" t="Include" />
+        <e p="currency.cs" t="Include" />
+        <e p="guest.cs" t="Include" />
+        <e p="invoice.cs" t="Include" />
+        <e p="reservation.cs" t="Include" />
+        <e p="room.cs" t="Include" />
+      </e>
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
         <e p="launchSettings.json" t="Include" />
       </e>
+      <e p="Services" t="Include">
+        <e p="AgencyService.cs" t="Include" />
+        <e p="BaseService.cs" t="Include" />
+        <e p="CitizenshipService.cs" t="Include" />
+        <e p="CountryService.cs" t="Include" />
+        <e p="CurrencyService.cs" t="Include" />
+        <e p="FileService.cs" t="Include" />
+        <e p="GuestService.cs" t="Include" />
+        <e p="Interfaces" t="Include">
+          <e p="IAgencyService.cs" t="Include" />
+          <e p="ICitizenshipService.cs" t="Include" />
+          <e p="ICountryService.cs" t="Include" />
+          <e p="ICrudService.cs" t="Include" />
+          <e p="ICurrencyService.cs" t="Include" />
+          <e p="IFileService.cs" t="Include" />
+          <e p="IGuestService.cs" t="Include" />
+          <e p="IInvoiceService.cs" t="Include" />
+          <e p="IProfileService.cs" t="Include" />
+          <e p="IReservationService.cs" t="Include" />
+          <e p="IRoleService.cs" t="Include" />
+          <e p="IRoomService.cs" t="Include" />
+          <e p="ITokenService.cs" t="Include" />
+          <e p="IUserService.cs" t="Include" />
+        </e>
+        <e p="InvoiceService.cs" t="Include" />
+        <e p="ProfileService.cs" t="Include" />
+        <e p="ReservationService.cs" t="Include" />
+        <e p="RoleService.cs" t="Include" />
+        <e p="RoomService.cs" t="Include" />
+        <e p="TokenService.cs" t="Include" />
+        <e p="UserService.cs" t="Include" />
+      </e>
       <e p="Startup.cs" t="Include" />
+      <e p="ViewModels" t="Include">
+        <e p="AgencyFilter.cs" t="Include" />
+        <e p="CitizenshipFilter.cs" t="Include" />
+        <e p="CountryFilter.cs" t="Include" />
+        <e p="CurrencyFilter.cs" t="Include" />
+        <e p="GetListViewModel.cs" t="Include" />
+        <e p="GuestFilter.cs" t="Include" />
+        <e p="InvoiceFilter.cs" t="Include" />
+        <e p="OrderBy.cs" t="Include" />
+        <e p="Paginator.cs" t="Include" />
+        <e p="ProfileViewModel.cs" t="Include" />
+        <e p="ReservationFilter.cs" t="Include" />
+        <e p="ReservationViewModel.cs" t="Include" />
+        <e p="Role" t="Include">
+          <e p="RoleFilterViewModel.cs" t="Include" />
+          <e p="RoleIdViewModel.cs" t="Include" />
+          <e p="RoleViewModel.cs" t="Include" />
+        </e>
+        <e p="RoomFilter.cs" t="Include" />
+        <e p="SignInViewModel.cs" t="Include" />
+        <e p="SignUpViewModel.cs" t="Include" />
+        <e p="User" t="Include">
+          <e p="AddRoleToUserViewModel.cs" t="Include" />
+          <e p="UserFilterViewModel.cs" t="Include" />
+          <e p="UserIdViewModel.cs" t="Include" />
+          <e p="UserUpdateViewModel.cs" t="Include" />
+          <e p="UserViewModel.cs" t="Include" />
+        </e>
+      </e>
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="backend.csproj" t="IncludeRecursive" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="nlog.config" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp2.2" t="Include">

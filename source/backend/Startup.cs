@@ -41,15 +41,13 @@ namespace backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           // services.AddDbContext<ApplicationDbContext>(options =>
-             //   options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-            //Add PostgreSQL support
-            services.AddEntityFrameworkNpgsql()
-               // .AddDbContext<ApplicationDbContext>(options =>
-                 //   options.UseNpgsql(Configuration["Data:DbContext:DockerCommandsConnectionString"]))
-                .AddDbContext<ApplicationDbContext>(options =>
-                    options.UseNpgsql(Configuration["Data:DbContext:CustomersConnectionString"]));
-            services.AddIdentity<ApplicationUser, ApplicationRole>(options => 
+            var connection = @"Server=db;Database=sade;User=sa;Password=Your_password123;";
+            services.AddDbContext<ApplicationDbContext>(
+        options => options.UseSqlServer(connection));
+         
+            
+         
+           services.AddIdentity<ApplicationUser, ApplicationRole>(options => 
                 {
                     options.Password.RequiredLength = 6;
                     options.Password.RequireLowercase = false;

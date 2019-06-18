@@ -8,9 +8,16 @@ ENV ASPNETCORE_URLS=http://*:5000
 WORKDIR /var/www/backend
 
 COPY . .
-
+RUN ["dotnet", "restore"]
+RUN ["dotnet", "build"]
 EXPOSE 5000
+RUN chmod +x ./entrypoint.sh
+CMD /bin/bash ./entrypoint.sh
+RUN dotnet build "backend.csproj" -c Release -o /app
 
-CMD ["/bin/bash", "-c", "dotnet restore && dotnet watch run"]
+
+
+ 
+CMD  ["/bin/bash", "-c", " dotnet watch run"]
 # docker build -t backend .
-# docker run  backend -p 8000:80 backend:latest
+# docker run   -p 5000:5000 backend:latest
