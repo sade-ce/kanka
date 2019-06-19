@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/var/www/backend/backend.csproj": {}
+    "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj": {}
   },
   "projects": {
-    "/var/www/backend/backend.csproj": {
+    "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/var/www/backend/backend.csproj",
+        "projectUniqueName": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "/var/www/backend/backend.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/var/www/backend/obj/",
+        "projectPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj",
+        "packagesPath": "/home/ism-ubuntu-onur/.nuget/packages/",
+        "outputPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "/home/ism-ubuntu-onur/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/home/ism-ubuntu-onur/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

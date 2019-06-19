@@ -15,16 +15,19 @@ services:
       - ./backend:/var/www/backend
     ports:
      - "5000:5000"
+    depends_on:
+     - "postgres"
     networks:
       - app-network
-  db:
-    image: "mcr.microsoft.com/mssql/server"
+  postgres:
+    container_name: 'postgres'
+    image: postgres
     environment:
-      SA_PASSWORD: "Your_password123"
-      ACCEPT_EULA: "Y"
+      POSTGRES_PASSWORD: password
     networks:
-     - app-network
-  
+      - app-network
+    ports:
+     - "5432:5432"
   nginx:
      container_name: frontend
      image: frontend
@@ -40,5 +43,3 @@ services:
 networks:
    app-network:
      driver: bridge
-volumes:
-  db_volume:

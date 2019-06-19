@@ -41,11 +41,16 @@ namespace backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Server=db;Database=sade;User=sa;Password=Your_password123;";
+/*             var connection = @"Server=db;Database=sade;User=sa;Password=Your_password123;";
             services.AddDbContext<ApplicationDbContext>(
         options => options.UseSqlServer(connection));
-         
-            
+          */
+               //Add PostgreSQL support
+            services.AddEntityFrameworkNpgsql()
+                .AddDbContext<ApplicationDbContext>(options =>
+                    options.UseNpgsql(Configuration["Data:DbContext:ConnectionString"]));
+
+
          
            services.AddIdentity<ApplicationUser, ApplicationRole>(options => 
                 {
