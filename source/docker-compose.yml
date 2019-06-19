@@ -16,14 +16,15 @@ services:
     ports:
      - "5000:5000"
     depends_on:
-     - "postgres"
+     - "my-postgres"
     networks:
       - app-network
-  postgres:
+  my-postgres:
     container_name: 'my-postgres'
     image: postgres
     environment:
       POSTGRES_PASSWORD: password
+      POSTGRES_USERNAME: postgres
     networks:
       - app-network
     ports:
