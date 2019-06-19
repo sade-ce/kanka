@@ -20,14 +20,16 @@ services:
     networks:
       - app-network
   postgres:
-    container_name: 'postgres'
+    container_name: 'my-postgres'
     image: postgres
     environment:
       POSTGRES_PASSWORD: password
     networks:
       - app-network
     ports:
-     - "5432:5432"
+     - 5432:5432
+    volumes:
+     - local_postgres_data:/var/lib/postgresql/data
   nginx:
      container_name: frontend
      image: frontend
@@ -43,3 +45,5 @@ services:
 networks:
    app-network:
      driver: bridge
+volumes:
+  local_postgres_data: {}

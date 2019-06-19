@@ -11,6 +11,8 @@ COPY . .
 RUN ["dotnet", "restore"]
 RUN ["dotnet", "build"]
 EXPOSE 5000
+COPY ./entrypoint.sh /
+RUN sed -i 's/\r//' /entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 CMD /bin/bash ./entrypoint.sh
 RUN dotnet build "backend.csproj" -c Release -o /app
