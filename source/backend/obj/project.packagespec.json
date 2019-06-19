@@ -1,13 +1,13 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj",
+    "projectUniqueName": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj",
     "projectName": "backend",
-    "projectPath": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/backend.csproj",
-    "outputPath": "/mnt/72FE77A028932AFA/codefolder/clone/kanka/source/backend/obj/",
+    "projectPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/backend.csproj",
+    "outputPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/source/backend/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
-      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      "/home/ism-ubuntu-onur/dotnet/sdk/NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
       "netcoreapp2.2"
@@ -42,6 +42,10 @@
         "Microsoft.EntityFrameworkCore.Design": {
           "target": "Package",
           "version": "[2.2.4, )"
+        },
+        "Microsoft.EntityFrameworkCore.SqlServer": {
+          "target": "Package",
+          "version": "[2.2.0, )"
         },
         "Microsoft.NETCore.App": {
           "suppressParent": "All",

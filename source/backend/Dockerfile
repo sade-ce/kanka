@@ -21,6 +21,6 @@ CMD /entrypoint.sh
 # Option 1
 # Start PostgreSQL and ASP.NET Core (link ASP.NET core to ProgreSQL container with legacy linking)
  
-# docker run -d  --name my-postgres -p 5432:5432  -e POSTGRES_PASSWORD=password postgres 
+# docker run -d  --name my-postgres -p 5432:5432  -e POSTGRES_PASSWORD=password  POSTGRES_USERNAME=postgres postgres 
 # docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=password postgres
 # docker run -d -p 5000:5000 --link my-postgres:postgres backend
