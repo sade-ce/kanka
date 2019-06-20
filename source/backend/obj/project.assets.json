@@ -12464,7 +12464,7 @@
         "/home/ism-ubuntu-onur/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/ism-ubuntu-onur/.config/NuGet/NuGet.Config"
+        "/home/ism-ubuntu-onur/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

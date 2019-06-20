@@ -23,7 +23,11 @@
       <e p="Enums" t="Include">
         <e p="Language.cs" t="Include" />
       </e>
-      <e p="Migrations" t="Include" />
+      <e p="Migrations" t="Include">
+        <e p="20190620080833_base.Designer.cs" t="Include" />
+        <e p="20190620080833_base.cs" t="Include" />
+        <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+      </e>
       <e p="Models" t="Include">
         <e p="ApplicationRole.cs" t="Include" />
         <e p="ApplicationUser.cs" t="Include" />
