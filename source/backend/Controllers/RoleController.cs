@@ -1,14 +1,14 @@
-using Server.Models;
-using Server.Services.Interfaces;
-using Server.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using backend.Models;
+using backend.Services.Interfaces;
+using backend.ViewModels;
 
-namespace Server.Controllers
+namespace backend.Controllers
 {
     [Route("api/[controller]/[action]")]
     [Produces("application/json")]
@@ -45,7 +45,7 @@ namespace Server.Controllers
 
             var role = await _roleManager.FindByNameAsync(model.Name);
             if (role != null)
-                return BadRequest("Error ya existe un rol con este nombre");
+                return BadRequest("Hata, bu adda bir rol zaten var ");
 
             var result = await _roleManager.CreateAsync(newRole);
             if (!result.Succeeded)
@@ -65,10 +65,10 @@ namespace Server.Controllers
             var role = await _roleManager.FindByIdAsync(model.Id.ToString());
 
             if (role != null && role.Id != model.Id)
-                return BadRequest("Error ya existe un rol con este Id");          
+                return BadRequest("Hata, bu Kimliğin zaten bir rolü var");          
 
             if (role == null)
-                return BadRequest("No se encuentra el rol");   
+                return BadRequest("Rol bulunamadı");   
 
             role.Name = model.Name; 
 

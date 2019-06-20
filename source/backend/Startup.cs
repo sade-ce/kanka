@@ -1,29 +1,17 @@
-﻿using Server.Services;
-using Server.Services.Interfaces;
-using Server;
-using Server.Models;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
-using Pomelo.EntityFrameworkCore.MySql;
-using System;
 using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.IdentityModel.Logging;
-using Microsoft.Extensions.FileProviders;
-using System.IO;
+using backend.Models;
+using backend.Services;
+using backend.Services.Interfaces;
 
 namespace backend
 {
@@ -171,15 +159,11 @@ namespace backend
             services.AddTransient<IProfileService, ProfileService>();
             services.AddTransient<IFileService, FileService>();
             services.AddTransient<ICountryService, CountryService>();
-            services.AddTransient<ICitizenshipService, CitizenshipService>();
-            services.AddTransient<ICurrencyService, CurrencyService>();
+          
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IGuestService, GuestService>();
-            services.AddTransient<IAgencyService, AgencyService>();
-            services.AddTransient<IInvoiceService, InvoiceService>();
-            services.AddTransient<IRoomService, RoomService>();
-            services.AddTransient<IReservationService, ReservationService>();
+            
 
             services.AddSingleton<ITokenService, TokenService>();            
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

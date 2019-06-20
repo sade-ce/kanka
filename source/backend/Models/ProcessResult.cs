@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
-namespace Server.Models
+namespace backend.Models
 {
     public class ProcessResult
     {

@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-
-namespace Server.ViewModels
+namespace backend.ViewModels
 {
     public class Paginator
     {

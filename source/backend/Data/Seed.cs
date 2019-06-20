@@ -1,11 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using Server.Models;
+using backend.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Server.Data
+namespace backend.Data
 {
     public static class Seed
     {

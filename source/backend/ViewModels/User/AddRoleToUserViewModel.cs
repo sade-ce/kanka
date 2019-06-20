@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace Server.ViewModels
+namespace backend.ViewModels
 {
     public class AddRoleToUserViewModel
     {

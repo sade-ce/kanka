@@ -1,4 +1,4 @@
-namespace Server.Models.Enums
+namespace backend.Models.Enums
 {
     public enum Period
     {

@@ -1,8 +1,7 @@
-using Server;
 using System;
 using System.Threading.Tasks;
 
-namespace Server.Models
+namespace backend.Models
 {
     public static class Process
     {

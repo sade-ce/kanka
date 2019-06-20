@@ -1,14 +1,14 @@
-using Server.Models;
-using Server.Services.Interfaces;
-using Server.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using backend.Models;
+using backend.Services.Interfaces;
+using backend.ViewModels;
 
-namespace Server.Controllers
+namespace backend.Controllers
 {
     [Route("api/countries")]
     [Produces("application/json")]

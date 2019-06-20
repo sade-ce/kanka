@@ -1,5 +1,3 @@
-using Server.Models;
-using Server.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -7,8 +5,10 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using backend.Models;
+using backend.Services.Interfaces;
 
-namespace Server.Services
+namespace backend.Services
 {
     public class TokenService : ITokenService
     {

@@ -1,9 +1,8 @@
-using Server.Models;
-using Server.ViewModels;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using backend.Models;
+using backend.ViewModels;
 
-namespace Server.Services.Interfaces
+namespace backend.Services.Interfaces
 {
     public interface IProfileService
     {

@@ -5,11 +5,11 @@ using System;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
-using Server.Services.Interfaces;
-using Server.Models;
-using Server.ViewModels;
-
-namespace Server.Services
+using backend.Models;
+using backend.Services.Interfaces;
+using backend.ViewModels;
+ 
+namespace backend.Services
 {
     public class GuestService : BaseService, IGuestService
     {
@@ -39,7 +39,7 @@ namespace Server.Services
                 Guest.Phone = model.Phone;
                 Guest.Identification = model.Identification;
                 Guest.CountryID = model.CountryID;
-                Guest.CitizenshipID = model.CitizenshipID;
+             
 
                 await context.SaveChangesAsync();
             };
@@ -78,8 +78,7 @@ namespace Server.Services
                 Guest.Phone = model.Phone;
                 Guest.Identification = model.Identification;
                 Guest.CountryID = model.CountryID;
-                Guest.CitizenshipID = model.CitizenshipID;
-
+ 
                 await context.SaveChangesAsync();
             };
 
@@ -134,7 +133,7 @@ namespace Server.Services
 
         private IQueryable<Guest> SetIncludes(IQueryable<Guest> q){
             q = q.Include(s => s.Country);
-            q = q.Include(s => s.Citizenship);
+ 
             return q;
         }
 
@@ -177,8 +176,7 @@ namespace Server.Services
                 q = q.Where(s => s.CountryID == f.countryID);
             }
             if (f.citizenshipID != 0) {
-                q = q.Where(s => s.CitizenshipID == f.citizenshipID);
-            }
+             }
             return q;
         }
     

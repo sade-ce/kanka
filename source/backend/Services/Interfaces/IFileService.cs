@@ -1,8 +1,8 @@
-using Server.Models;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace Server.Services.Interfaces
+namespace backend.Services.Interfaces
 {
     public interface IFileService
     {

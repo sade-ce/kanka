@@ -1,15 +1,14 @@
-using Server.Models;
-using Server.Services.Interfaces;
-using Server.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System;
+using backend.Models;
+using backend.Services.Interfaces;
+using backend.ViewModels;
 
-namespace Server.Controllers
+namespace backend.Controllers
 {
     [Route("api/[controller]/[action]")]
     [Produces("application/json")]
@@ -41,7 +40,7 @@ namespace Server.Controllers
 
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null)
-                return BadRequest("Error ya existe un usuario con este correo electrónico");
+                return BadRequest("Hata zaten bu e-postaya sahip bir kullanıcı var.");
 
             var newUser = new ApplicationUser 
             {
@@ -70,10 +69,10 @@ namespace Server.Controllers
             var user = await _userManager.FindByIdAsync(model.Id.ToString());
 
             if (user != null && user.Id != model.Id)
-                return BadRequest("Error ya existe un usuario con este Id");          
+                return BadRequest("Bu kimlige ait bir kullanıcı mevcut");          
 
             if (user == null)
-                return BadRequest("No se encuentra el rol");   
+                return BadRequest("Rol bulunamadı");   
 
             user.Email = model.Email;
             user.Firstname = model.Firstname;
@@ -184,7 +183,7 @@ namespace Server.Controllers
             var user = await _userManager.FindByIdAsync(model.UserId.ToString());            
 
             if (user == null)
-                return BadRequest("No se encuentra el usuario");
+                return BadRequest("Kullanıcı bulunamadı");
             
             var roles = await _userManager.GetRolesAsync(user);
             
@@ -193,7 +192,7 @@ namespace Server.Controllers
             var result = await _userManager.AddToRolesAsync(user, model.roles);
 
             if (!result.Succeeded)
-                return BadRequest("Error al adicionar rol");
+                return BadRequest("Rol ekleme hatası");
 
             return Ok(result);
             

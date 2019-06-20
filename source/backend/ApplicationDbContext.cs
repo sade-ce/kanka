@@ -1,9 +1,8 @@
-using Server.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
+using backend.Models;
 
-namespace Server
+namespace backend
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, long>
     {
@@ -17,21 +16,8 @@ namespace Server
 
         public DbSet<Country> Countries { get; set; }
 
-        public DbSet<Currency> Currencies { get; set; }
+    
 
-        public DbSet<Citizenship> Citizenships { get; set; }
-
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<Reservation> Reservations { get; set; }
-        public DbSet<Invoice> Invoices { get; set; }
-        public DbSet<Agency> Agencies { get; set; }
-
-        public DbSet<GuestReservation> GuestReservations { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            builder.Entity<GuestReservation>().HasKey(gr => new { gr.GuestId, gr.ReservationId });
-        }
+       
     }
 }

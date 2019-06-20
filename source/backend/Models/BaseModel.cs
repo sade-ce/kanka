@@ -1,6 +1,6 @@
 using System;
 
-namespace Server.Models
+namespace backend.Models
 {
     public abstract class BaseModel
     {

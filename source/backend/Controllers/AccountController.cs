@@ -1,15 +1,14 @@
-using Server.Models;
-using Server.ViewModels;
-using Server.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
+using backend.Services.Interfaces;
+using backend.ViewModels;
 
-namespace Server.Controllers
+namespace backend.Controllers
 {
     [Route("api/[controller]/[action]")]
     [Produces("application/json")]
@@ -42,11 +41,11 @@ namespace Server.Controllers
 
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
-                return BadRequest("Correo electrónico no encontrado");
+                return BadRequest("E-posta bulunamadı");
 
             var result = await _userManager.CheckPasswordAsync(user, model.Password);
             if (!result)
-                return BadRequest("Contraseña incorrecta");
+                return BadRequest("Yanlış şifre");
             
             var roles = await _userManager.GetRolesAsync(user);
             

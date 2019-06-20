@@ -1,8 +1,4 @@
-using Server.Models;
-using System;
-using System.Collections.Generic;
-
-namespace Server.Models
+namespace backend.Models
 {
     public class Country : BaseModel
     {

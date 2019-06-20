@@ -5,11 +5,11 @@ using System;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
-using Server.Services.Interfaces;
-using Server.Models;
-using Server.ViewModels;
+using backend.Models;
+using backend.Services.Interfaces;
+using backend.ViewModels;
 
-namespace Server.Services
+namespace backend.Services
 {
     public class UserService : BaseService, IUserService
     {

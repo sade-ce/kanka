@@ -2,14 +2,13 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Server;
-using Server.Models;
+using backend.Models;
+using backend.Services.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Server.Services.Interfaces;
 
-namespace Server.Services
+namespace backend.Services
 {
     public class FileService : BaseService, IFileService
     {

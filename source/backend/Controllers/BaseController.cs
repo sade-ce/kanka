@@ -1,10 +1,10 @@
-using Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using backend.Models;
 using Microsoft.AspNetCore.Cors;
 
-namespace Server.Controllers
+namespace backend.Controllers
 {
     [EnableCors("_EnabledCORS")]
     public abstract class BaseController : Controller

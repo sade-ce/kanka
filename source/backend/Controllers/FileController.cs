@@ -1,6 +1,3 @@
-using Server.Models;
-using Server.Services.Interfaces;
-using Server.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,8 +5,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using backend.Models;
+using backend.Services.Interfaces;
 
-namespace Server.Controllers
+namespace backend.Controllers
 {
     [Authorize]
     [Route("api/[controller]/[action]")]

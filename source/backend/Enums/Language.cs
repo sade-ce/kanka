@@ -1,8 +1,8 @@
-namespace Server.Enums
+namespace backend.Enums
 {
     public enum Language
     {
-        EN,
-        RU
+        TR,
+        EN
     }
 }

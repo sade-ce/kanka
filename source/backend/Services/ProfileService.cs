@@ -1,18 +1,13 @@
-using Server;
-using Server.Models;
-using Server.Enums;
-using Server.Services.Interfaces;
-using Server.ViewModels;
-using Server.Models.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using backend.Models;
+using backend.Services.Interfaces;
+using backend.ViewModels;
 
-namespace Server.Services
+namespace backend.Services
 {
     public class ProfileService : BaseService, IProfileService
     {

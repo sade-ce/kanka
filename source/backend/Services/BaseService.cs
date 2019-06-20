@@ -1,5 +1,3 @@
-using Server;
-using Server.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -7,8 +5,9 @@ using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using backend.Models;
 
-namespace Server.Services
+namespace backend.Services
 {
     public abstract class BaseService
     {
