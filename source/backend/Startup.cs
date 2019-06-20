@@ -107,14 +107,14 @@ namespace backend
                 { 
                     Title = "RestFull API", 
                     Version = "v1",
-                    Contact = new Contact { Name="Raydel Alvarez Ramírez", Email="raydel@gmail.com" }
+                    Contact = new Contact { Name="zinderud", Email="mokosam@gmail.com" }
                 });
             });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "../Client/dist";
+                configuration.RootPath = "../frontend/dist";
             });
         }
 
