@@ -14,11 +14,7 @@ import { ApiInterceptor } from './interceptors/api.interceptor';
 import {
   LocalStorageService,
   AuthService,
-  ApiReservationService,
-  ApiAgencyService,
   ApiGuestService,
-  ApiRoomService,
-  ApiFreeRoomService,
 } from './services/core';
 
 
@@ -37,11 +33,8 @@ import {
       useClass: ApiInterceptor,
       multi: true
     },
-    ApiAgencyService,
-    ApiGuestService,
-    ApiReservationService,
-    ApiRoomService,
-    ApiFreeRoomService,
+     ApiGuestService,
+
   ],
   declarations: []
 })

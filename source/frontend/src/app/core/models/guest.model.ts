@@ -4,7 +4,6 @@ import { BaseFilter } from './base-filter';
 import { HttpParams } from '@angular/common/http';
 import { isNullOrUndefined } from 'util';
 import { Country } from './country.model';
-import { Citizenship } from './citizenship.model';
 
 export interface Guest {
     id: number;
