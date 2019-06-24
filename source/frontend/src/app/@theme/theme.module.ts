@@ -36,7 +36,6 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 
-import {NbSecurityModule} from '@nebular/security';
 
 import {ConfirmDialogComponent, FooterComponent, HeaderComponent, ImageUploaderComponent} from './components';
 import {CapitalizePipe, NumberWithCommasPipe, PluralPipe, RoundPipe, TimingPipe} from './pipes';
@@ -61,8 +60,7 @@ const NB_MODULES = [
   NbPopoverModule,
   NbContextMenuModule,
   NgbModule,
-  NbSecurityModule, // *nbIsGranted directive,
-  NbProgressBarModule,
+   NbProgressBarModule,
   NbCalendarModule,
   NbCalendarRangeModule,
   NbStepperModule,
@@ -124,9 +122,9 @@ const NB_THEME_PROVIDERS = [
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders>{
+    return {
       ngModule: ThemeModule,
       providers: [...NB_THEME_PROVIDERS],
-    };
+    } as ModuleWithProviders;
   }
 }
