@@ -37,7 +37,7 @@ import {
 } from '@nebular/theme';
 
 
-import {ConfirmDialogComponent, FooterComponent, HeaderComponent, ImageUploaderComponent} from './components';
+import {ConfirmDialogComponent, FooterComponent, HeaderComponent} from './components';
 import {CapitalizePipe, NumberWithCommasPipe, PluralPipe, RoundPipe, TimingPipe} from './pipes';
 import {SampleLayoutComponent} from './layouts';
 import {DEFAULT_THEME} from './styles/theme.default';
@@ -84,7 +84,6 @@ const COMPONENTS = [
   FooterComponent,
   ConfirmDialogComponent,
   SampleLayoutComponent,
-  ImageUploaderComponent,
 ];
 
 const ENTRY_COMPONENTS = [
