@@ -4,20 +4,21 @@ import {NgModule} from '@angular/core';
 import {PagesComponent} from './pages.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {UserListComponent} from './user/user-list/user-list.component';
- 
+import { AuthGuard } from '@app/core/guards/core';
+
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
     {
       path: 'dashboard',
-      component: DashboardComponent,
+      component: DashboardComponent
     },
     {
       path: 'user',
       component: UserListComponent,
     },
-    
+
     {
       path: '',
       redirectTo: 'dashboard',

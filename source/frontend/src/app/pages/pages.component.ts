@@ -41,8 +41,9 @@ export class PagesComponent implements OnInit, OnDestroy {
                 this.username$ = this.authService.getUsernameAsync();
 
                 this.subscription = this.authService.getRoleAsync().subscribe( (data: any) => {
+                  console.log(data);
 
-                    if (data && typeof data === 'object' && data.constructor === Array)  {
+                  if (data && typeof data === 'object' && data.constructor === Array)  {
                       if (data.some(x => x === 'Admin')) {
                         this.isAdmin$.next(true);
                         this.menu = ADMİN_MENU_ITEMS;
