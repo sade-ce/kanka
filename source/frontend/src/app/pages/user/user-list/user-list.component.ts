@@ -13,9 +13,9 @@ export class UserListComponent implements OnInit {
   }
 
   refresh() {
-    this.userService.getAll().subscribe((users) => {
+  /*   this.userService.getAll().subscribe((users) => {
       this.source.load(users);
-    });
+    }); */
   }
 
 }
