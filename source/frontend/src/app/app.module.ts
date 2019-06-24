@@ -15,6 +15,7 @@ import { SharedModule } from '@app/shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
     SharedModule.forRoot(),
     AppRoutingModule,

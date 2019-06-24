@@ -35,6 +35,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   isProd = env.production;
 
 
+
   // kullanım https://alligator.io/angular/breakpoints-angular-cdk/
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
@@ -43,7 +44,47 @@ export class LayoutComponent implements OnInit, OnDestroy {
   constructor(private breakpointObserver: BreakpointObserver,
               private authService: AuthService,
               private snackBar: MatSnackBar,
-              private router: Router) { }
+              private router: Router) {
+
+
+
+                this.dashboard = {
+                  title: 'Dashboard',
+                  icon: 'dashboard',
+                  link: '/dashboard',
+                  pages: []
+                };
+
+
+                this.adminMenu = {
+                  title: 'Yönetim',
+                  icon: 'settings',
+                  pages: [
+                    {
+                      title: 'Kullanıcıları Yönet',
+                      link: '/admin/user/',
+                      icon: 'person'
+                    }
+
+                  ]
+                };
+
+
+                this.managerMenu = {
+                  title: 'Kullanıcı Menusu',
+                  icon: 'local_activity',
+                  pages: [
+                    {
+                      title: 'Yeni İşlemler',
+                      link: '/yen',
+                      icon: 'list'
+                    },
+                  ]
+                };
+
+
+
+              }
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isAuthenticated();

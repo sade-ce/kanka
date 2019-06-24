@@ -1,5 +1,5 @@
 export interface Menu {
-  heading: string;
+  title: string;
   icon: string;
   link?: string;
   pages?: Menu[];

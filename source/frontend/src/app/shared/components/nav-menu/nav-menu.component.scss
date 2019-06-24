@@ -1,0 +1,21 @@
+mat-expansion-panel.mat-expansion-panel {
+    margin: 0px;
+    border-radius: 0px;
+  }
+  .nav-link {
+    margin: 2px 0px 0px;
+
+  }
+  a.active {
+    background: rgba(27, 26, 26, 0.2);
+  }
+  .mat-accordion .mat-expansion-panel {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+  .mat-expansion-panel-header {
+    padding: 0 15px;
+    font-size: 16px;
+  }

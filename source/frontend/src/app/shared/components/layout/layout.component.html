@@ -1,3 +1,78 @@
-<p>
-  layout works!
-</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async) && (isLoggedIn$ | async)">
+    <mat-toolbar class="sidenav-navbar" color="primary">
+      <span>{{appName}}</span>
+    </mat-toolbar>
+
+    <app-nav-menu [items]="dashboard" *ngIf="isLoggedIn$ | async"></app-nav-menu>
+
+    <app-nav-menu [items]="adminMenu" *ngIf="isAdmin$.asObservable() | async"></app-nav-menu>
+
+    <app-nav-menu [items]="managerMenu" *ngIf="isManager$.asObservable() | async"></app-nav-menu>
+
+    </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar" color="primary">
+      <mat-toolbar-row>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+        <span *ngIf="!(isHandset$ | async)">{{appName}}</span>
+
+        <span class="spacer"></span>
+
+        <button mat-button [matMenuTriggerFor]="menu">
+          <span *ngIf="(isLoggedIn$ | async)">Merhaba {{username$ | async}}</span>
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+
+          <button mat-menu-item *ngIf="isLoggedIn$ | async" routerLink="auth/profile">
+            <mat-icon>person</mat-icon>
+            <span>profil</span>
+          </button>
+
+          <mat-divider *ngIf="isLoggedIn$ | async"></mat-divider>
+
+          <button mat-menu-item *ngIf="isLoggedIn$ | async"  (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Oturumu Kapat</span>
+          </button>
+
+          <button mat-menu-item *ngIf="!(isLoggedIn$ | async)" routerLink="auth/login">
+            <mat-icon>lock_open</mat-icon>
+            <span>giriş</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="layout">
+      <div class="router" style="background-color: white;">
+        <div class="item" [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
+          <router-outlet #o="outlet"></router-outlet>
+        </div>
+      </div>
+
+      <br/>
+
+      <footer class="footer">
+        <mat-toolbar color="primary">
+          <span>{{appName}} &#169; {{year}} - zinde</span>
+        </mat-toolbar>
+      </footer>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

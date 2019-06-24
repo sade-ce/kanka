@@ -42,6 +42,7 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CdkTableModule } from '@angular/cdk/table';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [ConfirmComponent, LayoutComponent, NavMenuComponent, GuestSelectorComponent],
 
@@ -78,9 +79,9 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatTabsModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
   ],
   exports: [
-    CommonModule,
     CommonModule,
     LayoutModule,
     MatToolbarModule,
