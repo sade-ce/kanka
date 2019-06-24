@@ -124,4 +124,12 @@ import { CdkTableModule } from '@angular/cdk/table';
     { provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl }
   ],
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot() {
+    return {
+      ngModule: SharedModule,
+      providers: []
+    };
+  }
+}
+

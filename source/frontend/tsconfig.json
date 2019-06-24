@@ -16,7 +16,8 @@
       "node_modules/@types"
     ],"paths": {
       "@app/core/*": ["src/app/core/*"],
-      "@env/*": ["src/environments/*"]
+      "@env/*": ["src/environments/*"],
+      "@app/shared/*": ["src/app/shared/*"],
     },
     "lib": [
       "es2018",
