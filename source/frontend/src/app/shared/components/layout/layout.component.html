@@ -24,7 +24,7 @@
           type="button"
           aria-label="Toggle sidenav"
           mat-icon-button
-          (click)="drawer.toggle()">
+          (click)="drawer.toggle()"  *ngIf="(isLoggedIn$ | async)">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
 
@@ -60,8 +60,8 @@
 
     <div class="layout">
       <div class="router" style="background-color: white;">
-        <div class="item" [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
-          <router-outlet #o="outlet"></router-outlet>
+        <div class="item"  >
+          <router-outlet  ></router-outlet>
         </div>
       </div>
 

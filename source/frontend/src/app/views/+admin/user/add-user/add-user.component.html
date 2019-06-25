@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="loading">
+      <mat-progress-bar value="indeterminate" *ngIf="loading" color="warn"></mat-progress-bar>
+    </div>
+  </div>
+  <br />
+  <div class="container">
+    <div class="item">
+
+      <div class="mat-elevation-z8">
+        <form [formGroup]="createForm" #f="ngForm" (ngSubmit)="onCreateUser()" class="form">
+          <mat-card class="mes-card">
+            <mat-toolbar>
+              <mat-card-header>
+                <h1 class="mat-h1">Kullanıcı Ekleme Ekranı</h1>
+              </mat-card-header>
+            </mat-toolbar>
+
+            <br />
+
+            <mat-card-content>
+
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  required
+                  type="text"
+                  placeholder="İsim"
+                  formControlName="firstname"
+                />
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  required
+                  type="text"
+                  placeholder="Soyisim"
+                  formControlName="lastname"
+                />
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  required
+                  type="text"
+                  placeholder="email"
+                  formControlName="email"
+                />
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <input matInput required #password type ="password" placeholder="Contraseña" formControlName="password">
+                <mat-hint align="end">6 / {{password.value.length}}</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  required
+                  type="password"
+                  placeholder="Şifre tekrar et"
+                  formControlName="repeat_password"
+                />
+                <mat-hint *ngIf="(createForm.value.password != createForm.value.repeat_password)
+                  || (createForm.value.password.length <= 6 && createForm.value.password.length > 1)">
+                  <span class="mat-warn">Minumum altı  karakterli olmalı</span>
+                </mat-hint>
+                <mat-hint *ngIf="(createForm.value.password == createForm.value.repeat_password)
+                 && (createForm.value.password.length > 6)">
+                  <span class="mat-accent">parala uyumsuz</span>
+                </mat-hint>
+              </mat-form-field>
+
+
+
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!createForm.valid ||
+                (createForm.value.password != createForm.value.repeat_password)" aria-label="create">
+                <mat-icon>add</mat-icon>
+                <span>Ekle</span>
+              </button>
+
+              <button mat-raised-button color="accent"
+                    routerLink="/admin/user" routerLinkActive type="button" aria-label="list">
+                <mat-icon>list</mat-icon>
+                <span>Kullanıcıları Listele</span>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </form>
+      </div>
+    </div>
+  </div>

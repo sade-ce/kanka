@@ -17,7 +17,7 @@ export class NavMenuComponent  implements OnInit {
  When you are creating a view dynamically and want to acces the TemplateRef,
  you won't be able to do so in ngAfterViewInit as it will cause a ExpressionHasChangedAfterChecked error.
   Setting the static flag to true will create your view in ngOnInit.  */
-  @ViewChild(MatAccordion, {static: false}) accordion: MatAccordion;
+  @ViewChild(MatAccordion, {static: true}) accordion: MatAccordion;
 
   constructor() {}
 

@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="loading">
+      <mat-progress-bar value="indeterminate" *ngIf="loading" color="warn"></mat-progress-bar>
+    </div>
+  </div>
+  <br />
+  <div class="container">
+    <div class="item">
+
+      <div class="mat-elevation-z8">
+        <form [formGroup]="editForm" #f="ngForm" (ngSubmit)="onEdit()" class="form">
+          <mat-card class="mes-card">
+            <mat-toolbar>
+              <mat-card-header>
+                <h1 class="mat-h1">Kullanıcıları Düzenle</h1>
+              </mat-card-header>
+            </mat-toolbar>
+
+            <br />
+
+            <mat-card-content>
+
+            <mat-form-field class="full-width">
+                <input
+                  matInput
+                  required
+                  type="text"
+                  placeholder="İsim"
+                  formControlName="firstname"
+                />
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  required
+                  type="text"
+                  placeholder="Apellidos"
+                  formControlName="lastname"
+                />
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  required
+                  type="text"
+                  placeholder="Correo"
+                  formControlName="email"
+                />
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <input matInput #password type ="password" placeholder="Contraseña" formControlName="password">
+                <mat-hint align="end">6 / {{password.value.length}}</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  type="password"
+                  placeholder="Repetir contraseña"
+                  formControlName="repeat_password"
+                />
+                <mat-hint *ngIf="(editForm.value.password != editForm.value.repeat_password)
+                  || (editForm.value.password.length <= 6 && editForm.value.password.length > 1)">
+                  <span class="mat-warn">Minumum & karakter olmalı</span>
+                </mat-hint>
+                <mat-hint *ngIf="(editForm.value.password == editForm.value.repeat_password)
+                && (editForm.value.password.length > 6)">
+                  <span class="mat-accent">Parola uyumsuz</span>
+                </mat-hint>
+              </mat-form-field>
+
+
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!editForm.valid" aria-label="edit">
+                <mat-icon>mode_edit</mat-icon>
+                <span>Düzenle</span>
+              </button>
+
+              <button mat-raised-button color="accent" routerLink="/admin/user" routerLinkActive type="button" aria-label="list">
+                <mat-icon>list</mat-icon>
+                <span>Listele</span>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,50 @@
+<div class="loading">
+    <mat-progress-bar *ngIf="loading" color="warn"></mat-progress-bar>
+  </div>
+  <br />
+  <div class="container">
+    <div class="item">
+
+      <mat-card class="card">
+          <mat-toolbar color="primary">
+            <mat-card-header>
+              <h1 class="mat-h1">Profil ekranı</h1>
+          </mat-card-header>
+        </mat-toolbar>
+
+        <br />
+
+        <mat-card-content>
+
+          <mat-grid-list *ngIf="userProfile" cols="2" rowHeight="120">
+            <mat-grid-tile><h3 class="mat-h3">İsim:</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3"> {{userProfile.firstname}}</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3">Soyisim:</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3"> {{userProfile.lastname}}</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3">eposta:</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3"> {{userProfile.email}}</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3">Kullanıcı adı:</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3"> {{userProfile.userName}}</h3></mat-grid-tile>
+            <mat-grid-tile><h3 class="mat-h3">Roles:</h3></mat-grid-tile>
+            <mat-grid-tile>
+              <mat-chip-list *ngFor="let role of userProfile.roles">
+                <mat-chip class="role" color="accent">{{role}}</mat-chip>
+              </mat-chip-list>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+        </mat-card-content>
+
+        <br />
+        <mat-card-actions>
+          <button mat-raised-button color="accent" type="button"
+            routerLink="/dashboard" routerLinkActive="active"
+            aria-label="dashboard">
+          <mat-icon>dashboard</mat-icon>
+          <span>Ana sayfa</span>
+        </button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+  </div>

@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConfirmComponent } from './components/confirm/confirm.component';
-import { LayoutComponent } from './components/layout/layout.component';
-import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
-import { GuestSelectorComponent } from './components/guest-selector/guest-selector.component';
-import { CustomMatPaginatorIntl } from './lib/mat-paginator-intl';
+import { LayoutComponent } from '@app/shared/components/layout/layout.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import {
   MatToolbarModule,
@@ -40,15 +37,17 @@ import {
 } from '@angular/material';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LayoutModule } from '@angular/cdk/layout';
-import { CdkTableModule } from '@angular/cdk/table';
 import { RouterModule } from '@angular/router';
-@NgModule({
-  declarations: [ConfirmComponent, LayoutComponent, NavMenuComponent, GuestSelectorComponent],
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { CdkTableModule } from '@angular/cdk/table';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { GuestSelectorComponent } from './components/guest-selector/guest-selector.component';
+import { CustomMatPaginatorIntl } from './lib/mat-paginator-intl';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+@NgModule({
   imports: [
     CommonModule,
-    CommonModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -77,12 +76,11 @@ import { RouterModule } from '@angular/router';
     MatNativeDateModule,
     MatStepperModule,
     MatTabsModule,
-    FormsModule,
-    ReactiveFormsModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
-    CommonModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -93,7 +91,9 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatSidenavModule,
     MatMenuModule,
+    MatIconModule,
     MatTooltipModule,
     MatProgressBarModule,
     MatSnackBarModule,
@@ -104,25 +104,33 @@ import { RouterModule } from '@angular/router';
     CdkTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSelectModule,
+    MatCheckboxModule,
     MatDialogModule,
+    MatChipsModule,
     MatAutocompleteModule,
     MatDividerModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatStepperModule,
+    MatSlideToggleModule,
     MatTabsModule,
-    FormsModule,
-    ReactiveFormsModule,
+
+    LayoutComponent,
     ConfirmComponent,
+    GuestSelectorComponent,
+  ],
+  declarations: [
     LayoutComponent,
     NavMenuComponent,
-    GuestSelectorComponent
+    ConfirmComponent,
+    GuestSelectorComponent,
+  ],
+  providers: [
+    {provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl}
   ],
   entryComponents: [
     ConfirmComponent
-  ],
-  providers: [
-    { provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl }
   ],
 })
 export class SharedModule {
@@ -133,4 +141,3 @@ export class SharedModule {
     };
   }
 }
-
