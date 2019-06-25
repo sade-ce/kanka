@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  serverUrl: 'https://localhost:5001/api',
+  serverUrl: 'http://localhost:5000/api',
   envName: 'Production',
   appName: 'Kanka pr'
 };

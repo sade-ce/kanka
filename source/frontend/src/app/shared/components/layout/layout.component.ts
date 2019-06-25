@@ -110,7 +110,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
     });
   }
 
-
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['auth/login']);
+  }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
