@@ -104,9 +104,9 @@ export class ListCountryComponent implements OnInit, OnDestroy {
   onDelete(item: any): void {
     const dialogRef = this.dialog.open(ConfirmComponent, {
       data: {
-        message: `  emin misin  "${
+        message: `"${
           item.name
-        }"?`
+        }" silinecektir. Onaylıyormusunuz?`
       }
     });
 
