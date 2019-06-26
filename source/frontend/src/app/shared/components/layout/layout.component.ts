@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, BehaviorSubject, Subscription } from 'rxjs';
+import { Observable, BehaviorSubject, Subscription, from } from 'rxjs';
 import { Menu } from '@app/core/models/menu.model';
 import { environment as env} from '@env/environment';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -7,7 +7,7 @@ import { AuthService } from '@app/core/services/core';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-
+import {dashboardMenu, adminMenu, managerMenu} from './userMenu';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -45,45 +45,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
               private authService: AuthService,
               private snackBar: MatSnackBar,
               private router: Router) {
-
-
-
-                this.dashboard = {
-                  title: 'Dashboard',
-                  icon: 'dashboard',
-                  link: '/dashboard',
-                  pages: []
-                };
-
-
-                this.adminMenu = {
-                  title: 'Yönetim',
-                  icon: 'settings',
-                  pages: [
-                    {
-                      title: 'Kullanıcıları Yönet',
-                      link: '/admin/user/',
-                      icon: 'person'
-                    }
-
-                  ]
-                };
-
-
-                this.managerMenu = {
-                  title: 'Kullanıcı Menusu',
-                  icon: 'local_activity',
-                  pages: [
-                    {
-                      title: 'Yeni İşlemler',
-                      link: '/yen',
-                      icon: 'list'
-                    },
-                  ]
-                };
-
-
-
+                this.dashboard = dashboardMenu;
+                this.adminMenu = adminMenu;
+                this.managerMenu =  managerMenu;
               }
 
   ngOnInit() {

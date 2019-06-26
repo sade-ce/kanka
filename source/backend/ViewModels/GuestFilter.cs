@@ -8,6 +8,5 @@ namespace backend.ViewModels
 
         public long countryID { get; set; }
 
-        public long citizenshipID { get; set; }
     }
 }

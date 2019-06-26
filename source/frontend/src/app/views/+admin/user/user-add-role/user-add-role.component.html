@@ -21,7 +21,7 @@
             <mat-card-content>
 
               <mat-form-field class="full-width">
-                <mat-select placeholder="Escoja un rol" multiple formControlName="roles" required>
+                <mat-select placeholder="Bir rol seçin" multiple formControlName="roles" required>
                   <mat-option *ngFor="let role of roles | async" [value]="role.name">{{role.name}}</mat-option>
                 </mat-select>
               </mat-form-field>

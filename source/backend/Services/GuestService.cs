@@ -175,8 +175,7 @@ namespace backend.Services
             if (f.countryID != 0) {
                 q = q.Where(s => s.CountryID == f.countryID);
             }
-            if (f.citizenshipID != 0) {
-             }
+            
             return q;
         }
     

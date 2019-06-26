@@ -35,7 +35,7 @@
                   matInput
                   required
                   type="text"
-                  placeholder="Apellidos"
+                  placeholder="Soyadı"
                   formControlName="lastname"
                 />
               </mat-form-field>
@@ -45,7 +45,7 @@
                   matInput
                   required
                   type="text"
-                  placeholder="Correo"
+                  placeholder="email"
                   formControlName="email"
                 />
               </mat-form-field>
@@ -60,7 +60,7 @@
                 <input
                   matInput
                   type="password"
-                  placeholder="Repetir contraseña"
+                  placeholder="Şifre Tekrarlayınız"
                   formControlName="repeat_password"
                 />
                 <mat-hint *ngIf="(editForm.value.password != editForm.value.repeat_password)
