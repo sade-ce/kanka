@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/kpsweb.csproj": {}
+    "/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/kpsweb.csproj": {}
   },
   "projects": {
-    "/media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/kpsweb.csproj": {
+    "/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/kpsweb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/kpsweb.csproj",
+        "projectUniqueName": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/kpsweb.csproj",
         "projectName": "kpsweb",
-        "projectPath": "/media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/kpsweb.csproj",
+        "projectPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/kpsweb.csproj",
         "packagesPath": "/home/ism-ubuntu-onur/.nuget/packages/",
-        "outputPath": "/media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/obj/",
+        "outputPath": "/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/home/ism-ubuntu-onur/dotnet/sdk/NuGetFallbackFolder"

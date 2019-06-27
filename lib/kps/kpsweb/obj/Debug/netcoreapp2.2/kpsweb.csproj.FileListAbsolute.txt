@@ -13,3 +13,18 @@
 /media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.RazorTargetAssemblyInfo.cache
 /media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.dll
 /media/ism-ubuntu-onur/sade/code/rider/kpsweb/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.pdb
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/bin/Debug/netcoreapp2.2/kpsweb.dll.config
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/bin/Debug/netcoreapp2.2/kpsweb.deps.json
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/bin/Debug/netcoreapp2.2/kpsweb.runtimeconfig.json
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/bin/Debug/netcoreapp2.2/kpsweb.runtimeconfig.dev.json
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/bin/Debug/netcoreapp2.2/kpsweb.dll
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/bin/Debug/netcoreapp2.2/kpsweb.pdb
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.csprojAssemblyReference.cache
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.csproj.CoreCompileInputs.cache
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.RazorAssemblyInfo.cache
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.RazorAssemblyInfo.cs
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.AssemblyInfoInputs.cache
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.AssemblyInfo.cs
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.RazorTargetAssemblyInfo.cache
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.dll
+/media/ism-ubuntu-onur/sade/code/clone code/kanka/lib/kps/kpsweb/obj/Debug/netcoreapp2.2/kpsweb.pdb
