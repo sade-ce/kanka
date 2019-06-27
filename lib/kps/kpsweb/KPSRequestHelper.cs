@@ -138,6 +138,63 @@ namespace KPSRequestSample
             return result;
         }
 
+   /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="kimlikNo"></param>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public XmlDocument BilesikKisiveAdresSorgula(long kimlikNo, long sorgulayanKimlikNo, string userName, string password)
+        {
+            string token = GetSTSToken(sorgulayanKimlikNo, userName, password);
+
+            Console.WriteLine("sending kps request....");
+
+            var now = DateTime.Now;
+            string created = now.AddMinutes(-1).ToUniversalTime().ToString("o");
+            string expires = now.AddMinutes(5).ToUniversalTime().ToString("o");
+
+            StringBuilder xml = new StringBuilder();
+            xml.Append("<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\" xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">");
+
+            xml.Append("<s:Header>");
+            xml.Append("<a:Action s:mustUnderstand=\"1\">https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgula</a:Action>");
+            xml.Append("<a:MessageID>urn:uuid:" + Guid.NewGuid() + "</a:MessageID>");
+            xml.Append("<a:ReplyTo>");
+            xml.Append("<a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>");
+            xml.Append("</a:ReplyTo>");
+
+            xml.Append("<a:To s:mustUnderstand=\"1\">" + kpsTestUrl + "</a:To>");
+            xml.Append("<o:Security s:mustUnderstand=\"1\" xmlns:o=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">");
+            xml.Append("<u:Timestamp u:Id=\"_0\">");
+            xml.Append("<u:Created>" + created + "</u:Created>");
+            xml.Append("<u:Expires>" + expires + "</u:Expires>");
+            xml.Append("</u:Timestamp>");
+
+
+            // token
+            xml.Append(token);
+
+
+            xml.Append("</o:Security>");
+            xml.Append("</s:Header>");
+            xml.Append("<s:Body>");
+            xml.Append("<BilesikKisiveAdresSorgula xmlns=\"https://www.saglik.gov.tr/KPS/01/01/2017\">");
+            xml.Append("<kimlikNo>" + kimlikNo + "</kimlikNo>");
+            xml.Append("</BilesikKisiveAdresSorgula>");
+            xml.Append("</s:Body>");
+            xml.Append("</s:Envelope>");
+
+
+            string envelopeString = xml.ToString();
+
+            var result = SendSoapRequest(envelopeString, kpsTestUrl);
+
+            Console.WriteLine("kps request SUCCESS");
+
+            return result;
+        }
 
 
         /// <summary>
