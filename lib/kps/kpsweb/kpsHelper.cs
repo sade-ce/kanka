@@ -35,7 +35,7 @@ namespace kpsweb
             Console.WriteLine(username+ "------------------");
             //send request to kps service with test user
             var result = kpsRequestHelper.BilesikKisiveAdresSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
-                string ad1 = result.GetElementsByTagName("AcikAdres")[0].InnerText;
+                string ad1 = result.GetElementsByTagName("DogumTarih")[0].InnerText;
              Console.WriteLine("sade -----------"+ad1);
             var maviKartNode = result.GetElementsByTagName("MaviKartliKisiKutukleri");
             var tcNode = result.GetElementsByTagName("TCVatandasiKisiKutukleri");
