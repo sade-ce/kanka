@@ -219,10 +219,19 @@ namespace kpsweb
             model.KoyAdresi = GetElementsByTagNameHelper(result, "KoyAdresi");
             model.Il = GetElementsByTagNameHelper(result, "Il");
             model.IlKodu = GetElementsByTagNameHelper(result, "IlKodu");
+            model.Ilce = GetElementsByTagNameHelper(result, "Ilce");
             model.IlceKodu = GetElementsByTagNameHelper(result, "IlceKodu");
             model.Koy = GetElementsByTagNameHelper(result, "Koy");
             model.Mahalle = GetElementsByTagNameHelper(result, "Mahalle");
             model.MahalleKodu = GetElementsByTagNameHelper(result, "MahalleKodu");
+            model.AnneTcKimlikNo = GetElementsByTagNameHelper(result, "AnneTcKimlikNo");
+            model.BabaTcKimlikNo = GetElementsByTagNameHelper(result, "BabaTcKimlikNo");
+            model.YabanciAdres = GetElementsByTagNameHelper(result, "YabanciAdres");
+            model.YabanciSehir = GetElementsByTagNameHelper(result, "YabanciSehir");
+            model.YabanciUlke = GetElementsByTagNameHelper(result, "YabanciUlke");
+            model.OlumTarih = GetElementsByTagNameHelper(result, "OlumTarih");
+            model.MedeniHal = GetElementsByTagNameHelper(result, "MedeniHal");
+
   
             return model;
         }
