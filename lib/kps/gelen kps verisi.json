@@ -1,0 +1,250 @@
+{
+	"Envelope": {
+		"Header": {
+			"Action": {
+				"_s:mustUnderstand": "1",
+				"__prefix": "a",
+				"__text": "https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgulaResponse"
+			},
+			"RelatesTo": {
+				"__prefix": "a",
+				"__text": "urn:uuid:5eba5309-6bc6-4fcd-ba5b-903091941471"
+			},
+			"Security": {
+				"Timestamp": {
+					"Created": {
+						"__prefix": "u",
+						"__text": "2019-06-28T06:44:36.541Z"
+					},
+					"Expires": {
+						"__prefix": "u",
+						"__text": "2019-06-28T06:49:36.541Z"
+					},
+					"_u:Id": "_0",
+					"_xmlns:u": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+					"__prefix": "u"
+				},
+				"_s:mustUnderstand": "1",
+				"_xmlns:o": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+				"__prefix": "o"
+			},
+			"__prefix": "s"
+		},
+		"Body": {
+			"BilesikKisiveAdresSorgulaResponse": {
+				"BilesikKisiveAdresSorgulaResult": {
+					"HataBilgisi": {
+						"_i:nil": "true"
+					},
+					"Sonuc": {
+						"AdresBilgisi": {
+							"AcikAdres": "BURHANİYE MAH. HACI MEHMET EFENDİ SK. ANIL APT SİTESİ  NO: 14  İÇ KAPI NO: 3 CEYHAN / ADANA",
+							"AdresNo": "1138305998",
+							"AdresTip": {
+								"Aciklama": "İl/İlçe Merkezi",
+								"Kod": "1"
+							},
+							"BeldeAdresi": {
+								"_i:nil": "true"
+							},
+							"BeyanTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"BeyandaBulunanKimlikNo": {
+								"_i:nil": "true"
+							},
+							"HataBilgisi": {
+								"_i:nil": "true"
+							},
+							"IlIlceMerkezAdresi": {
+								"BagimsizBolumDurum": {
+									"Aciklama": "Bilinmeyen",
+									"Kod": "1"
+								},
+								"BagimsizBolumTipi": {
+									"Aciklama": "Özel",
+									"Kod": "2"
+								},
+								"BinaAda": "625",
+								"BinaBlokAdi": {
+									"_i:nil": "true"
+								},
+								"BinaDurum": {
+									"Aciklama": "Bilinmeyen",
+									"Kod": "1"
+								},
+								"BinaKodu": "1527713",
+								"BinaNo": "101618049",
+								"BinaNumaratajTipi": {
+									"Aciklama": "Bina Ana Giriş",
+									"Kod": "1"
+								},
+								"BinaPafta": "104AA",
+								"BinaParsel": "1",
+								"BinaSiteAdi": "ANIL APT",
+								"BinaYapiTipi": {
+									"Aciklama": "Mesken",
+									"Kod": "1"
+								},
+								"Csbm": "HACI MEHMET EFENDİ SK.",
+								"CsbmKodu": "94768",
+								"DisKapiNo": "14",
+								"HataBilgisi": {
+									"_i:nil": "true"
+								},
+								"IcKapiNo": "3",
+								"Il": "ADANA",
+								"IlKodu": "1",
+								"Ilce": "CEYHAN",
+								"IlceKodu": "1219",
+								"KatNo": {
+									"_i:nil": "true"
+								},
+								"Mahalle": "BURHANİYE MAH.",
+								"MahalleKodu": "260",
+								"TapuBagimsizBolumNo": {
+									"_i:nil": "true"
+								},
+								"YapiKullanimAmac": {
+									"Aciklama": "Mesken",
+									"Kod": "1110"
+								},
+								"YolAltiKatSayisi": {
+									"_i:nil": "true"
+								},
+								"YolUstuKatSayisi": {
+									"_i:nil": "true"
+								}
+							},
+							"KoyAdresi": {
+								"_i:nil": "true"
+							},
+							"TasinmaTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"TescilTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"YurtDisiAdresi": {
+								"_i:nil": "true"
+							}
+						},
+						"HataBilgisi": {
+							"_i:nil": "true"
+						},
+						"KimlikNo": "26794358554",
+						"MaviKartliKisiKutukleri": {
+							"_i:nil": "true"
+						},
+						"TCVatandasiKisiKutukleri": {
+							"GeciciKimlikBilgisi": {
+								"_i:nil": "true"
+							},
+							"HataBilgisi": {
+								"_i:nil": "true"
+							},
+							"KisiBilgisi": {
+								"AnneTCKimlikNo": "28912288842",
+								"BabaTCKimlikNo": "31360205910",
+								"DogumYerKod": "1104",
+								"DurumBilgisi": {
+									"Din": {
+										"_i:nil": "true"
+									},
+									"Durum": {
+										"Aciklama": "Ölüm",
+										"Kod": "3"
+									},
+									"MedeniHal": {
+										"Aciklama": "Bekâr",
+										"Kod": "1"
+									},
+									"OlumTarih": {
+										"Ay": "1",
+										"Gun": "1",
+										"Yil": "2016"
+									}
+								},
+								"HataBilgisi": {
+									"_i:nil": "true"
+								},
+								"KayitYeriBilgisi": {
+									"AileSiraNo": "135",
+									"BireySiraNo": "14",
+									"Cilt": {
+										"Aciklama": "HACIVELİ",
+										"Kod": "4"
+									},
+									"Il": {
+										"Aciklama": "Kastamonu",
+										"Kod": "37"
+									},
+									"Ilce": {
+										"Aciklama": "Abana",
+										"Kod": "1101"
+									}
+								},
+								"TCKimlikNo": "26794358554",
+								"TemelBilgisi": {
+									"Ad": "DOĞAN BİLAL",
+									"AnneAd": "SAFİYE",
+									"BabaAd": "BURHAN",
+									"Cinsiyet": {
+										"Aciklama": "Erkek",
+										"Kod": "1"
+									},
+									"DogumTarih": {
+										"Ay": "5",
+										"Gun": "12",
+										"Yil": "1985"
+									},
+									"DogumYer": "ADANA",
+									"Soyad": "DÖYAN"
+								}
+							},
+							"NufusCuzdaniBilgisi": {
+								"_i:nil": "true"
+							},
+							"TCKKBilgisi": {
+								"_i:nil": "true"
+							}
+						},
+						"YabanciKisiKutukleri": {
+							"_i:nil": "true"
+						}
+					},
+					"_xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+				},
+				"_xmlns": "https://www.saglik.gov.tr/KPS/01/01/2017"
+			},
+			"__prefix": "s"
+		},
+		"_xmlns:s": "http://www.w3.org/2003/05/soap-envelope",
+		"_xmlns:a": "http://www.w3.org/2005/08/addressing",
+		"__prefix": "s"
+	}
+}
