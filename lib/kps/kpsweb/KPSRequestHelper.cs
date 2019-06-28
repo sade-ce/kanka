@@ -80,7 +80,7 @@ namespace kpsweb
 
 
 
-   /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="kimlikNo"></param>
@@ -135,18 +135,18 @@ namespace kpsweb
 
             Console.WriteLine("kps request SUCCESS");
 
-            BilesikKisiveAdresSorgulaModel model=new BilesikKisiveAdresSorgulaModel();
-            model.Ad   =result.GetElementsByTagName("Ad")[0].InnerText;
-            model.Soyad=result.GetElementsByTagName("Soyad")[0].InnerText;
-            model.AnneAd=result.GetElementsByTagName("AnneAd")[0].InnerText;
-            model.BabaAd=result.GetElementsByTagName("BabaAd")[0].InnerText;
-            model.Cinsiyet=result.GetElementsByTagName("Cinsiyet")[0].InnerText;
-            model.DogumTarih=result.GetElementsByTagName("DogumTarih")[0].InnerText;
-            model.DogumYer=result.GetElementsByTagName("DogumYer")[0].InnerText;
-            model.AcikAdres=result.GetElementsByTagName("AcikAdres")[0].InnerText;
-            model.AdresNo=result.GetElementsByTagName("AdresNo")[0].InnerText;
-            model.IlIlceMerkezAdresi=result.GetElementsByTagName("IlIlceMerkezAdresi")[0].InnerText;
-            
+            BilesikKisiveAdresSorgulaModel model = new BilesikKisiveAdresSorgulaModel();
+            model.Ad = result.GetElementsByTagName("Ad")[0].InnerText;
+            model.Soyad = result.GetElementsByTagName("Soyad")[0].InnerText;
+            model.AnneAd = result.GetElementsByTagName("AnneAd")[0].InnerText;
+            model.BabaAd = result.GetElementsByTagName("BabaAd")[0].InnerText;
+            model.Cinsiyet = result.GetElementsByTagName("Cinsiyet")[0].InnerText;
+            model.DogumTarih = result.GetElementsByTagName("DogumTarih")[0].InnerText;
+            model.DogumYer = result.GetElementsByTagName("DogumYer")[0].InnerText;
+            model.AcikAdres = result.GetElementsByTagName("AcikAdres")[0].InnerText;
+            model.AdresNo = result.GetElementsByTagName("AdresNo")[0].InnerText;
+            model.IlIlceMerkezAdresi = result.GetElementsByTagName("IlIlceMerkezAdresi")[0].InnerText;
+
             return model;
         }
 
@@ -205,27 +205,25 @@ namespace kpsweb
 
             Console.WriteLine("kps request SUCCESS");
 
-              BilesikKisiveAdresSorgulaModel model=new BilesikKisiveAdresSorgulaModel();
-              model.Ad   =result.GetElementsByTagName("Ad")[0].InnerText;
-              model.Soyad=result.GetElementsByTagName("Soyad")[0].InnerText;
-              model.AnneAd=result.GetElementsByTagName("AnneAd")[0].InnerText;
-              model.BabaAd=result.GetElementsByTagName("BabaAd")[0].InnerText;
-              model.Cinsiyet=result.GetElementsByTagName("Cinsiyet")[0].InnerText;
-              model.DogumTarih=result.GetElementsByTagName("DogumTarih")[0].InnerText;
-              model.DogumYer=result.GetElementsByTagName("DogumYer")[0].InnerText;
-              model.AcikAdres=result.GetElementsByTagName("AcikAdres")[0].InnerText;
-              model.AdresNo=result.GetElementsByTagName("AdresNo")[0].InnerText;
-              model.IlIlceMerkezAdresi=result.GetElementsByTagName("IlIlceMerkezAdresi")[0].InnerText;
-              model.KoyAdresi=result.GetElementsByTagName("KoyAdresi")[0].InnerText;
-              model.Il=result.GetElementsByTagName("Il")[0].InnerText;
-              model.IlKodu=result.GetElementsByTagName("IlKodu")[0].InnerText;
-              model.IlceKodu=result.GetElementsByTagName("IlceKodu")[0].InnerText;
-              model.Koy=result.GetElementsByTagName("Koy")[0].InnerText;
-            //  model.KoyKodu=result.GetElementsByTagName("KoyKodu")[0].InnerText;
-              model.Mahalle=result.GetElementsByTagName("Mahalle")[0].InnerText;
-              model.MahalleKodu=result.GetElementsByTagName("MahalleKodu")[0].InnerText;
-            
-
+            BilesikKisiveAdresSorgulaModel model = new BilesikKisiveAdresSorgulaModel();
+            model.Ad = GetElementsByTagNameHelper(result, "Ad");
+            model.Soyad = GetElementsByTagNameHelper(result, "Soyad");
+            model.AnneAd = GetElementsByTagNameHelper(result, "AnneAd");
+            model.BabaAd = GetElementsByTagNameHelper(result, "BabaAd");
+            model.Cinsiyet = GetElementsByTagNameHelper(result, "Cinsiyet");
+            model.DogumTarih = GetElementsByTagNameHelper(result, "DogumTarih");
+            model.DogumYer = GetElementsByTagNameHelper(result, "DogumYer");
+            model.AcikAdres = GetElementsByTagNameHelper(result, "AcikAdres");
+            model.AdresNo = GetElementsByTagNameHelper(result, "AdresNo");
+            model.IlIlceMerkezAdresi = GetElementsByTagNameHelper(result, "IlIlceMerkezAdresi");
+            model.KoyAdresi = GetElementsByTagNameHelper(result, "KoyAdresi");
+            model.Il = GetElementsByTagNameHelper(result, "Il");
+            model.IlKodu = GetElementsByTagNameHelper(result, "IlKodu");
+            model.IlceKodu = GetElementsByTagNameHelper(result, "IlceKodu");
+            model.Koy = GetElementsByTagNameHelper(result, "Koy");
+            model.Mahalle = GetElementsByTagNameHelper(result, "Mahalle");
+            model.MahalleKodu = GetElementsByTagNameHelper(result, "MahalleKodu");
+  
             return model;
         }
 
@@ -367,6 +365,22 @@ namespace kpsweb
             }
 
             return null;
+        }
+
+
+
+
+
+        private string GetElementsByTagNameHelper(XmlDocument root, string tag)
+        {
+            var matches = root.GetElementsByTagName(tag);
+            if (matches.Count > 0)
+                return matches[0].InnerText;
+            else
+            {
+                return "";
+            }
+
         }
 
     }

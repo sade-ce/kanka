@@ -33,7 +33,7 @@ namespace kpsweb
             string password = passwordConfig;
             Console.WriteLine(username+ "------------------");
             //send request to kps service with test user
-            var result = kpsRequestHelper.KimlikNoIleAdresBilgisiSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
+            var result = kpsRequestHelper.BilesikKisiveAdresSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
               
                Console.WriteLine(result+result.Soyad);
               
