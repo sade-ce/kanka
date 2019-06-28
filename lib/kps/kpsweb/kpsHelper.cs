@@ -22,7 +22,7 @@ namespace kpsweb
             var sorgulayanConfig = Configuration["appSettings:SorgulayanKimlikNo"];
             Console.WriteLine(usernameConfig);
 
-            string tcNo = "24919422036";
+            string tcNo = "10711897622";
 
             KPSRequestHelper kpsRequestHelper = new KPSRequestHelper();
             long sorgulayanKimlikNo;
@@ -33,7 +33,7 @@ namespace kpsweb
             string password = passwordConfig;
             Console.WriteLine(username+ "------------------");
             //send request to kps service with test user
-            var result = kpsRequestHelper.BilesikKisiveAdresSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
+            var result = kpsRequestHelper.KimlikNoIleAdresBilgisiSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
               
                Console.WriteLine(result+result.Soyad);
               

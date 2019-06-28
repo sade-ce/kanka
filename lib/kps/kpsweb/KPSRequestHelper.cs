@@ -87,7 +87,7 @@ namespace kpsweb
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public XmlDocument KimlikNoIleAdresBilgisiSorgula(long kimlikNo, long sorgulayanKimlikNo, string userName, string password)
+        public BilesikKisiveAdresSorgulaModel KimlikNoIleAdresBilgisiSorgula(long kimlikNo, long sorgulayanKimlikNo, string userName, string password)
         {
             string token = GetSTSToken(sorgulayanKimlikNo, userName, password);
 
@@ -135,7 +135,19 @@ namespace kpsweb
 
             Console.WriteLine("kps request SUCCESS");
 
-            return result;
+            BilesikKisiveAdresSorgulaModel model=new BilesikKisiveAdresSorgulaModel();
+            model.Ad   =result.GetElementsByTagName("Ad")[0].InnerText;
+            model.Soyad=result.GetElementsByTagName("Soyad")[0].InnerText;
+            model.AnneAd=result.GetElementsByTagName("AnneAd")[0].InnerText;
+            model.BabaAd=result.GetElementsByTagName("BabaAd")[0].InnerText;
+            model.Cinsiyet=result.GetElementsByTagName("Cinsiyet")[0].InnerText;
+            model.DogumTarih=result.GetElementsByTagName("DogumTarih")[0].InnerText;
+            model.DogumYer=result.GetElementsByTagName("DogumYer")[0].InnerText;
+            model.AcikAdres=result.GetElementsByTagName("AcikAdres")[0].InnerText;
+            model.AdresNo=result.GetElementsByTagName("AdresNo")[0].InnerText;
+            model.IlIlceMerkezAdresi=result.GetElementsByTagName("IlIlceMerkezAdresi")[0].InnerText;
+            
+            return model;
         }
 
         /// <summary>
