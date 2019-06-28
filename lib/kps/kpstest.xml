@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="kpsservices" targetNamespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WS2007FederationHttpBinding_IKpsServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:IssuedToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+              <sp:RequestSecurityTokenTemplate>
+                <trust:KeyType xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">http://docs.oasis-open.org/ws-sx/ws-trust/200512/Bearer</trust:KeyType>
+                <trust:CanonicalizationAlgorithm xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">http://www.w3.org/2001/10/xml-exc-c14n#</trust:CanonicalizationAlgorithm>
+                <trust:EncryptionAlgorithm xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">http://www.w3.org/2001/04/xmlenc#aes256-cbc</trust:EncryptionAlgorithm>
+              </sp:RequestSecurityTokenTemplate>
+              <wsp:Policy>
+                <sp:RequireInternalReference/>
+              </wsp:Policy>
+            </sp:IssuedToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust13 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust13>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="BilesikKisiSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="kimlikNo" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BilesikKisiSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BilesikKisiSorgulaResult" nillable="true" type="tns:KpsServisSonucuBilesikKisiBilgisi"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KpsServisSonucuBilesikKisiBilgisi">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:KpsServisSonucuOfBilesikKisiBilgisiZmZ26SC9">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuBilesikKisiBilgisi" nillable="true" type="tns:KpsServisSonucuBilesikKisiBilgisi"/>
+      <xs:complexType name="KpsServisSonucuOfBilesikKisiBilgisiZmZ26SC9">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="KpsServisSonucuOf{0}{#}" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="BilesikKisiBilgisi" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017"/>
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Sonuc" nillable="true" type="tns:BilesikKisiBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuOfBilesikKisiBilgisiZmZ26SC9" nillable="true" type="tns:KpsServisSonucuOfBilesikKisiBilgisiZmZ26SC9"/>
+      <xs:complexType name="Parametre">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aciklama" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Kod" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Parametre" nillable="true" type="tns:Parametre"/>
+      <xs:complexType name="BilesikKisiBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="MaviKartliKisiKutukleri" nillable="true" type="tns:MaviKartliKisiKutukleri"/>
+          <xs:element minOccurs="0" name="TCVatandasiKisiKutukleri" nillable="true" type="tns:TCVatandasiKisiKutukleri"/>
+          <xs:element minOccurs="0" name="YabanciKisiKutukleri" nillable="true" type="tns:YabanciKisiKutukleri"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BilesikKisiBilgisi" nillable="true" type="tns:BilesikKisiBilgisi"/>
+      <xs:complexType name="MaviKartliKisiKutukleri">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KisiBilgisi" nillable="true" type="tns:MaviKartKisiBilgisi"/>
+          <xs:element minOccurs="0" name="MaviKartBilgisi" nillable="true" type="tns:MaviKartBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MaviKartliKisiKutukleri" nillable="true" type="tns:MaviKartliKisiKutukleri"/>
+      <xs:complexType name="MaviKartKisiBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnneTCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BabaTCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="DogumYerKod" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="DurumBilgisi" nillable="true" type="tns:MaviKartKisiDurumBilgisi"/>
+          <xs:element minOccurs="0" name="GercekKisiKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KazanilanTCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="KimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="TemelBilgisi" nillable="true" type="tns:TemelBilgisi"/>
+          <xs:element minOccurs="0" name="Ulke" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MaviKartKisiBilgisi" nillable="true" type="tns:MaviKartKisiBilgisi"/>
+      <xs:complexType name="MaviKartKisiDurumBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Durum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="MedeniHal" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="OlumTarih" nillable="true" type="tns:TarihBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MaviKartKisiDurumBilgisi" nillable="true" type="tns:MaviKartKisiDurumBilgisi"/>
+      <xs:complexType name="TarihBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ay" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Gun" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Yil" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TarihBilgisi" nillable="true" type="tns:TarihBilgisi"/>
+      <xs:complexType name="TemelBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AnneAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BabaAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cinsiyet" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="DogumTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DogumYer" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TemelBilgisi" nillable="true" type="tns:TemelBilgisi"/>
+      <xs:complexType name="MaviKartBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AnneAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BabaAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Birim" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Cinsiyet" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="DogumTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DogumYer" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DogumYerKod" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KartKayitNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="KimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="MedeniHal" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="No" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="OncekiSoyad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Seri" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Uyruk" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="VerilisNeden" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="VerilmeTarih" nillable="true" type="tns:TarihBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MaviKartBilgisi" nillable="true" type="tns:MaviKartBilgisi"/>
+      <xs:complexType name="TCVatandasiKisiKutukleri">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GeciciKimlikBilgisi" nillable="true" type="tns:TCGeciciKimlikBilgisi"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KisiBilgisi" nillable="true" type="tns:TCKisiBilgisi"/>
+          <xs:element minOccurs="0" name="NufusCuzdaniBilgisi" nillable="true" type="tns:TCCuzdanBilgisi"/>
+          <xs:element minOccurs="0" name="TCKKBilgisi" nillable="true" type="tns:TCKK"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TCVatandasiKisiKutukleri" nillable="true" type="tns:TCVatandasiKisiKutukleri"/>
+      <xs:complexType name="TCGeciciKimlikBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AnneAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BabaAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BelgeNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cinsiyet" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="DogumTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DuzenlenmeTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DuzenleyenIlce" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="OncekiSoyad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SonGecerlilikTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCKimlikNo" nillable="true" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TCGeciciKimlikBilgisi" nillable="true" type="tns:TCGeciciKimlikBilgisi"/>
+      <xs:complexType name="TCKisiBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnneTCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BabaTCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="DogumYerKod" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="DurumBilgisi" nillable="true" type="tns:TCKisiDurumBilgisi"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KayitYeriBilgisi" nillable="true" type="tns:KayitYeriBilgisi"/>
+          <xs:element minOccurs="0" name="TCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="TemelBilgisi" nillable="true" type="tns:TemelBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TCKisiBilgisi" nillable="true" type="tns:TCKisiBilgisi"/>
+      <xs:complexType name="TCKisiDurumBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Din" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Durum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="MedeniHal" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="OlumTarih" nillable="true" type="tns:TarihBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TCKisiDurumBilgisi" nillable="true" type="tns:TCKisiDurumBilgisi"/>
+      <xs:complexType name="KayitYeriBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AileSiraNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="BireySiraNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Cilt" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Il" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Ilce" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KayitYeriBilgisi" nillable="true" type="tns:KayitYeriBilgisi"/>
+      <xs:complexType name="TCCuzdanBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AnneAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BabaAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CuzdanKayitNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="CuzdanVerilmeNeden" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="DogumTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DogumYer" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="No" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Seri" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="VerildigiIlce" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="VerilmeTarih" nillable="true" type="tns:TarihBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TCCuzdanBilgisi" nillable="true" type="tns:TCCuzdanBilgisi"/>
+      <xs:complexType name="TCKK">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AnneAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BabaAd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BasvuruNeden" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Cinsiyet" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="DogumTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DogumYer" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KayitNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="SeriNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SonGecerlilikTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="TeslimEdenBirim" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="TeslimTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="VerenMakam" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TCKK" nillable="true" type="tns:TCKK"/>
+      <xs:complexType name="YabanciKisiKutukleri">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KisiBilgisi" nillable="true" type="tns:YabanciKisiBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="YabanciKisiKutukleri" nillable="true" type="tns:YabanciKisiKutukleri"/>
+      <xs:complexType name="YabanciKisiBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnneKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BabaKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BitisTarihiBelirsizOlmaNeden" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="DogumTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DogumYerKod" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="DurumBilgisi" nillable="true" type="tns:YabanciKisiDurumBilgisi"/>
+          <xs:element minOccurs="0" name="GercekKisiKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="IzinBaslangicTarih" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="IzinBitisTarih" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="IzinDuzenlenenIl" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="IzinNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="KaynakBirim" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KazanilanTCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="KimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="OlumTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="TemelBilgisi" nillable="true" type="tns:TemelBilgisi"/>
+          <xs:element minOccurs="0" name="Uyruk" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="YabanciKisiBilgisi" nillable="true" type="tns:YabanciKisiBilgisi"/>
+      <xs:complexType name="YabanciKisiDurumBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Durum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="MedeniHal" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="YabanciKisiDurumBilgisi" nillable="true" type="tns:YabanciKisiDurumBilgisi"/>
+      <xs:element name="BilesikKisiveAdresSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="kimlikNo" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BilesikKisiveAdresSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BilesikKisiveAdresSorgulaResult" nillable="true" type="tns:KpsServisSonucuBilesikKisiveAdresBilgisi"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KpsServisSonucuBilesikKisiveAdresBilgisi">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:KpsServisSonucuOfBilesikKisiveAdresBilgisiZmZ26SC9">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuBilesikKisiveAdresBilgisi" nillable="true" type="tns:KpsServisSonucuBilesikKisiveAdresBilgisi"/>
+      <xs:complexType name="KpsServisSonucuOfBilesikKisiveAdresBilgisiZmZ26SC9">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="KpsServisSonucuOf{0}{#}" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="BilesikKisiveAdresBilgisi" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017"/>
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Sonuc" nillable="true" type="tns:BilesikKisiveAdresBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuOfBilesikKisiveAdresBilgisiZmZ26SC9" nillable="true" type="tns:KpsServisSonucuOfBilesikKisiveAdresBilgisiZmZ26SC9"/>
+      <xs:complexType name="BilesikKisiveAdresBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdresBilgisi" nillable="true" type="tns:KisiAdresBilgisi"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="MaviKartliKisiKutukleri" nillable="true" type="tns:MaviKartliKisiKutukleri"/>
+          <xs:element minOccurs="0" name="TCVatandasiKisiKutukleri" nillable="true" type="tns:TCVatandasiKisiKutukleri"/>
+          <xs:element minOccurs="0" name="YabanciKisiKutukleri" nillable="true" type="tns:YabanciKisiKutukleri"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BilesikKisiveAdresBilgisi" nillable="true" type="tns:BilesikKisiveAdresBilgisi"/>
+      <xs:complexType name="KisiAdresBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcikAdres" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AdresNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="AdresTip" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BeldeAdresi" nillable="true" type="tns:BeldeAdresi"/>
+          <xs:element minOccurs="0" name="BeyanTarihi" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="BeyandaBulunanKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="IlIlceMerkezAdresi" nillable="true" type="tns:IlIlceMerkezAdresi"/>
+          <xs:element minOccurs="0" name="KoyAdresi" nillable="true" type="tns:KoyAdresi"/>
+          <xs:element minOccurs="0" name="TasinmaTarihi" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="TescilTarihi" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="YurtDisiAdresi" nillable="true" type="tns:YurtDisiAdresi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KisiAdresBilgisi" nillable="true" type="tns:KisiAdresBilgisi"/>
+      <xs:complexType name="BeldeAdresi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BagimsizBolumDurum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BagimsizBolumTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaAda" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaBlokAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaDurum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaKodu" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BinaNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="BinaNumaratajTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaPafta" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaParsel" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaSiteAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaYapiTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Csbm" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CsbmKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="DisKapiNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="IcKapiNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Il" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IlKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Ilce" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IlceKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="KatNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Koy" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="KoyKayitNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="KoyKodu" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="Mahalle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MahalleKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="TapuBagimsizBolumNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="YapiKullanimAmac" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="YolAltiKatSayisi" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="YolUstuKatSayisi" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BeldeAdresi" nillable="true" type="tns:BeldeAdresi"/>
+      <xs:complexType name="IlIlceMerkezAdresi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BagimsizBolumDurum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BagimsizBolumTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaAda" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaBlokAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaDurum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaKodu" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BinaNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="BinaNumaratajTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaPafta" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaParsel" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaSiteAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaYapiTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Csbm" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CsbmKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="DisKapiNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="IcKapiNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Il" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IlKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Ilce" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IlceKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="KatNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Mahalle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MahalleKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="TapuBagimsizBolumNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="YapiKullanimAmac" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="YolAltiKatSayisi" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="YolUstuKatSayisi" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IlIlceMerkezAdresi" nillable="true" type="tns:IlIlceMerkezAdresi"/>
+      <xs:complexType name="KoyAdresi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BagimsizBolumDurum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BagimsizBolumTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaAda" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaBlokAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaDurum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaKodu" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BinaNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="BinaNumaratajTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="BinaPafta" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaParsel" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaSiteAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BinaYapiTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Csbm" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CsbmKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="DisKapiNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="IcKapiNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Il" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IlKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Ilce" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IlceKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="KatNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Koy" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="KoyKayitNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="KoyKodu" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="Mahalle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MahalleKodu" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="TapuBagimsizBolumNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="YapiKullanimAmac" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="YolAltiKatSayisi" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="YolUstuKatSayisi" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KoyAdresi" nillable="true" type="tns:KoyAdresi"/>
+      <xs:complexType name="YurtDisiAdresi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisTemsDuzeltmeBeyanTarih" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="DisTemsDuzeltmeKararTarih" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="DisTemsDuzeltmeNeden" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="DisTemsilcilik" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="YabanciAdres" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="YabanciSehir" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="YabanciUlke" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="YurtDisiAdresi" nillable="true" type="tns:YurtDisiAdresi"/>
+      <xs:element name="TcKimlikNoSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="kriter" nillable="true" type="tns:KisiSorgulaKisiBilgileriCO"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KisiSorgulaKisiBilgileriCO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AnneAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BabaAdi" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cinsiyet" type="tns:ECinsiyet"/>
+          <xs:element minOccurs="0" name="DogumTarihi" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="DogumYeri" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Soyadi" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KisiSorgulaKisiBilgileriCO" nillable="true" type="tns:KisiSorgulaKisiBilgileriCO"/>
+      <xs:simpleType name="ECinsiyet">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BILINMEYEN"/>
+          <xs:enumeration value="ERKEK"/>
+          <xs:enumeration value="KADIN"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ECinsiyet" nillable="true" type="tns:ECinsiyet"/>
+      <xs:element name="TcKimlikNoSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TcKimlikNoSorgulaResult" nillable="true" type="tns:KpsServisSonucuKisiTemelBilgisi"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KpsServisSonucuKisiTemelBilgisi">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:KpsServisSonucuOfTCKisiBilgisiZmZ26SC9">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuKisiTemelBilgisi" nillable="true" type="tns:KpsServisSonucuKisiTemelBilgisi"/>
+      <xs:complexType name="KpsServisSonucuOfTCKisiBilgisiZmZ26SC9">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="KpsServisSonucuOf{0}{#}" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="TCKisiBilgisi" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017"/>
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Sonuc" nillable="true" type="tns:TCKisiBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuOfTCKisiBilgisiZmZ26SC9" nillable="true" type="tns:KpsServisSonucuOfTCKisiBilgisiZmZ26SC9"/>
+      <xs:element name="KimlikNoIleAdresBilgisiSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="kimlikNo" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="KimlikNoIleAdresBilgisiSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="KimlikNoIleAdresBilgisiSorgulaResult" nillable="true" type="tns:KpsServisSonucuKisiAdresBilgisi"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KpsServisSonucuKisiAdresBilgisi">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:KpsServisSonucuOfKisiAdresBilgisiZmZ26SC9">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuKisiAdresBilgisi" nillable="true" type="tns:KpsServisSonucuKisiAdresBilgisi"/>
+      <xs:complexType name="KpsServisSonucuOfKisiAdresBilgisiZmZ26SC9">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="KpsServisSonucuOf{0}{#}" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="KisiAdresBilgisi" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017"/>
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Sonuc" nillable="true" type="tns:KisiAdresBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuOfKisiAdresBilgisiZmZ26SC9" nillable="true" type="tns:KpsServisSonucuOfKisiAdresBilgisiZmZ26SC9"/>
+      <xs:element name="AileBireyleriSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="kriter" nillable="true" type="tns:AileBireyleriSorgulaKriter"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="AileBireyleriSorgulaKriter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TCKimlikNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="Tip" type="tns:EAileSorguTipi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AileBireyleriSorgulaKriter" nillable="true" type="tns:AileBireyleriSorgulaKriter"/>
+      <xs:simpleType name="EAileSorguTipi">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Aile"/>
+          <xs:enumeration value="TumAile"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="EAileSorguTipi" nillable="true" type="tns:EAileSorguTipi"/>
+      <xs:element name="AileBireyleriSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AileBireyleriSorgulaResult" nillable="true" type="tns:KpsServisSonucuAileBilgisi"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KpsServisSonucuAileBilgisi">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:KpsServisSonucuOfAileBilgisiZmZ26SC9">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuAileBilgisi" nillable="true" type="tns:KpsServisSonucuAileBilgisi"/>
+      <xs:complexType name="KpsServisSonucuOfAileBilgisiZmZ26SC9">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="KpsServisSonucuOf{0}{#}" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="AileBilgisi" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017"/>
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Sonuc" nillable="true" type="tns:AileBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuOfAileBilgisiZmZ26SC9" nillable="true" type="tns:KpsServisSonucuOfAileBilgisiZmZ26SC9"/>
+      <xs:complexType name="AileBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AileKisiListesi" nillable="true" type="tns:ArrayOfAileKisiBilgisi"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KisiBilgisi" nillable="true" type="tns:TCKisiBilgisi"/>
+          <xs:element minOccurs="0" name="TCKimlikNo" nillable="true" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AileBilgisi" nillable="true" type="tns:AileBilgisi"/>
+      <xs:complexType name="ArrayOfAileKisiBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AileKisiBilgisi" nillable="true" type="tns:AileKisiBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAileKisiBilgisi" nillable="true" type="tns:ArrayOfAileKisiBilgisi"/>
+      <xs:complexType name="AileKisiBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DurumBilgisi" nillable="true" type="tns:TCKisiDurumBilgisi"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KayitYeriBilgisi" nillable="true" type="tns:KayitYeriBilgisi"/>
+          <xs:element minOccurs="0" name="TCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="TemelBilgisi" nillable="true" type="tns:TemelBilgisi"/>
+          <xs:element minOccurs="0" name="Yakinlik" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AileKisiBilgisi" nillable="true" type="tns:AileKisiBilgisi"/>
+      <xs:element name="KimlikNoIleNufusKayitOrnegiSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="kimlikNo" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="KimlikNoIleNufusKayitOrnegiSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="KimlikNoIleNufusKayitOrnegiSorgulaResult" nillable="true" type="tns:KpsServisSonucuGenelNufusKayitOrnegi"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KpsServisSonucuGenelNufusKayitOrnegi">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:KpsServisSonucuOfGenelNufusKayitOrnegiZmZ26SC9">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuGenelNufusKayitOrnegi" nillable="true" type="tns:KpsServisSonucuGenelNufusKayitOrnegi"/>
+      <xs:complexType name="KpsServisSonucuOfGenelNufusKayitOrnegiZmZ26SC9">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="KpsServisSonucuOf{0}{#}" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="GenelNufusKayitOrnegi" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017"/>
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Sonuc" nillable="true" type="tns:GenelNufusKayitOrnegi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuOfGenelNufusKayitOrnegiZmZ26SC9" nillable="true" type="tns:KpsServisSonucuOfGenelNufusKayitOrnegiZmZ26SC9"/>
+      <xs:complexType name="GenelNufusKayitOrnegi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NkoMaviKart" nillable="true" type="tns:NkoMaviKart"/>
+          <xs:element minOccurs="0" name="NkoVatandas" nillable="true" type="tns:Nko"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GenelNufusKayitOrnegi" nillable="true" type="tns:GenelNufusKayitOrnegi"/>
+      <xs:complexType name="NkoMaviKart">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Kisiler" nillable="true" type="tns:ArrayOfNkoMaviKartKisi"/>
+          <xs:element minOccurs="0" name="NkoTuru" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Olaylar" nillable="true" type="tns:ArrayOfNkoMaviKartOlay"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NkoMaviKart" nillable="true" type="tns:NkoMaviKart"/>
+      <xs:complexType name="ArrayOfNkoMaviKartKisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NkoMaviKartKisi" nillable="true" type="tns:NkoMaviKartKisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfNkoMaviKartKisi" nillable="true" type="tns:ArrayOfNkoMaviKartKisi"/>
+      <xs:complexType name="NkoMaviKartKisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnneKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BabaKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="BosanmaTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="DurumBilgisi" nillable="true" type="tns:NkoMaviKartKisiDurumBilgisi"/>
+          <xs:element minOccurs="0" name="EvlenmeTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="TemelBilgisi" nillable="true" type="tns:TemelBilgisi"/>
+          <xs:element minOccurs="0" name="TescilTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="Ulke" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="YakinlikKod" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NkoMaviKartKisi" nillable="true" type="tns:NkoMaviKartKisi"/>
+      <xs:complexType name="NkoMaviKartKisiDurumBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Durum" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="MedeniHal" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="OlumTarih" nillable="true" type="tns:TarihBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NkoMaviKartKisiDurumBilgisi" nillable="true" type="tns:NkoMaviKartKisiDurumBilgisi"/>
+      <xs:complexType name="ArrayOfNkoMaviKartOlay">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NkoMaviKartOlay" nillable="true" type="tns:NkoMaviKartOlay"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfNkoMaviKartOlay" nillable="true" type="tns:ArrayOfNkoMaviKartOlay"/>
+      <xs:complexType name="NkoMaviKartOlay">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Dusunce" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KisiKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="OlayTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="OlayTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NkoMaviKartOlay" nillable="true" type="tns:NkoMaviKartOlay"/>
+      <xs:complexType name="Nko">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Kisiler" nillable="true" type="tns:ArrayOfNkoKisi"/>
+          <xs:element minOccurs="0" name="NkoTuru" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Olaylar" nillable="true" type="tns:ArrayOfNkoOlay"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Nko" nillable="true" type="tns:Nko"/>
+      <xs:complexType name="ArrayOfNkoKisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NkoKisi" nillable="true" type="tns:NkoKisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfNkoKisi" nillable="true" type="tns:ArrayOfNkoKisi"/>
+      <xs:complexType name="NkoKisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DurumBilgisi" nillable="true" type="tns:TCKisiDurumBilgisi"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KayitYeriBilgisi" nillable="true" type="tns:KayitYeriBilgisi"/>
+          <xs:element minOccurs="0" name="KisiOlayTarihBilgisi" nillable="true" type="tns:OlayTarihBilgisi"/>
+          <xs:element minOccurs="0" name="TCKimlikNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="TemelBilgisi" nillable="true" type="tns:TemelBilgisi"/>
+          <xs:element minOccurs="0" name="YakinlikKod" nillable="true" type="tns:Parametre"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NkoKisi" nillable="true" type="tns:NkoKisi"/>
+      <xs:complexType name="OlayTarihBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BosanmaTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="EvlenmeTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="TescilTarih" nillable="true" type="tns:TarihBilgisi"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OlayTarihBilgisi" nillable="true" type="tns:OlayTarihBilgisi"/>
+      <xs:complexType name="ArrayOfNkoOlay">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NkoOlay" nillable="true" type="tns:NkoOlay"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfNkoOlay" nillable="true" type="tns:ArrayOfNkoOlay"/>
+      <xs:complexType name="NkoOlay">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Dusunce" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="KayitYeri" nillable="true" type="tns:KisiKayitYeriKodBilgisi"/>
+          <xs:element minOccurs="0" name="OlayKayitNo" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="OlayTarih" nillable="true" type="tns:TarihBilgisi"/>
+          <xs:element minOccurs="0" name="OlayTipi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NkoOlay" nillable="true" type="tns:NkoOlay"/>
+      <xs:complexType name="KisiKayitYeriKodBilgisi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AileSiraNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="BireySiraNo" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="CiltKod" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="IlceKod" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KisiKayitYeriKodBilgisi" nillable="true" type="tns:KisiKayitYeriKodBilgisi"/>
+      <xs:element name="YetkiListesi">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="YetkiListesiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="YetkiListesiResult" nillable="true" type="tns:KpsServisSonucuYetkiListesi"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="KpsServisSonucuYetkiListesi">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:KpsServisSonucuOfArrayOfWcfServiceZmZ26SC9">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuYetkiListesi" nillable="true" type="tns:KpsServisSonucuYetkiListesi"/>
+      <xs:complexType name="KpsServisSonucuOfArrayOfWcfServiceZmZ26SC9">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="KpsServisSonucuOf{0}{#}" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="ArrayOfWcfService" Namespace="https://www.saglik.gov.tr/KPS/01/01/2017"/>
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HataBilgisi" nillable="true" type="tns:Parametre"/>
+          <xs:element minOccurs="0" name="Sonuc" nillable="true" type="tns:ArrayOfWcfService"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KpsServisSonucuOfArrayOfWcfServiceZmZ26SC9" nillable="true" type="tns:KpsServisSonucuOfArrayOfWcfServiceZmZ26SC9"/>
+      <xs:complexType name="ArrayOfWcfService">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WcfService" nillable="true" type="tns:WcfService"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWcfService" nillable="true" type="tns:ArrayOfWcfService"/>
+      <xs:complexType name="WcfService">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IsAuthorized" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Methods" nillable="true" type="tns:ArrayOfMethod"/>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WcfService" nillable="true" type="tns:WcfService"/>
+      <xs:complexType name="ArrayOfMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Method" nillable="true" type="tns:Method"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfMethod" nillable="true" type="tns:ArrayOfMethod"/>
+      <xs:complexType name="Method">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Argumans" nillable="true" type="tns:ArrayOfProperty"/>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IsAuthorized" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="MethodId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReturnProperties" nillable="true" type="tns:ArrayOfProperty"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Method" nillable="true" type="tns:Method"/>
+      <xs:complexType name="ArrayOfProperty">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Property" nillable="true" type="tns:Property"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfProperty" nillable="true" type="tns:ArrayOfProperty"/>
+      <xs:complexType name="Property">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsAuthorized" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PropertyId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubProperties" nillable="true" type="tns:ArrayOfProperty"/>
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Property" nillable="true" type="tns:Property"/>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IKpsServices_BilesikKisiSorgula_InputMessage">
+    <wsdl:part name="parameters" element="tns:BilesikKisiSorgula"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_BilesikKisiSorgula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BilesikKisiSorgulaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_BilesikKisiveAdresSorgula_InputMessage">
+    <wsdl:part name="parameters" element="tns:BilesikKisiveAdresSorgula"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_BilesikKisiveAdresSorgula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BilesikKisiveAdresSorgulaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_TcKimlikNoSorgula_InputMessage">
+    <wsdl:part name="parameters" element="tns:TcKimlikNoSorgula"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_TcKimlikNoSorgula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TcKimlikNoSorgulaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_KimlikNoIleAdresBilgisiSorgula_InputMessage">
+    <wsdl:part name="parameters" element="tns:KimlikNoIleAdresBilgisiSorgula"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_KimlikNoIleAdresBilgisiSorgula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KimlikNoIleAdresBilgisiSorgulaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_AileBireyleriSorgula_InputMessage">
+    <wsdl:part name="parameters" element="tns:AileBireyleriSorgula"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_AileBireyleriSorgula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AileBireyleriSorgulaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_KimlikNoIleNufusKayitOrnegiSorgula_InputMessage">
+    <wsdl:part name="parameters" element="tns:KimlikNoIleNufusKayitOrnegiSorgula"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_KimlikNoIleNufusKayitOrnegiSorgula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KimlikNoIleNufusKayitOrnegiSorgulaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_YetkiListesi_InputMessage">
+    <wsdl:part name="parameters" element="tns:YetkiListesi"/>
+  </wsdl:message>
+  <wsdl:message name="IKpsServices_YetkiListesi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:YetkiListesiResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IKpsServices">
+    <wsdl:operation name="BilesikKisiSorgula">
+      <wsdl:input wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiSorgula" message="tns:IKpsServices_BilesikKisiSorgula_InputMessage"/>
+      <wsdl:output wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiSorgulaResponse" message="tns:IKpsServices_BilesikKisiSorgula_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="BilesikKisiveAdresSorgula">
+      <wsdl:input wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgula" message="tns:IKpsServices_BilesikKisiveAdresSorgula_InputMessage"/>
+      <wsdl:output wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgulaResponse" message="tns:IKpsServices_BilesikKisiveAdresSorgula_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="TcKimlikNoSorgula">
+      <wsdl:input wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/TcKimlikNoSorgula" message="tns:IKpsServices_TcKimlikNoSorgula_InputMessage"/>
+      <wsdl:output wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/TcKimlikNoSorgulaResponse" message="tns:IKpsServices_TcKimlikNoSorgula_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="KimlikNoIleAdresBilgisiSorgula">
+      <wsdl:input wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/KimlikNoIleAdresBilgisiSorgula" message="tns:IKpsServices_KimlikNoIleAdresBilgisiSorgula_InputMessage"/>
+      <wsdl:output wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/KimlikNoIleAdresBilgisiSorgulaResponse" message="tns:IKpsServices_KimlikNoIleAdresBilgisiSorgula_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="AileBireyleriSorgula">
+      <wsdl:input wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/AileBireyleriSorgula" message="tns:IKpsServices_AileBireyleriSorgula_InputMessage"/>
+      <wsdl:output wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/AileBireyleriSorgulaResponse" message="tns:IKpsServices_AileBireyleriSorgula_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="KimlikNoIleNufusKayitOrnegiSorgula">
+      <wsdl:input wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/KimlikNoIleNufusKayitOrnegiSorgula" message="tns:IKpsServices_KimlikNoIleNufusKayitOrnegiSorgula_InputMessage"/>
+      <wsdl:output wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/KimlikNoIleNufusKayitOrnegiSorgulaResponse" message="tns:IKpsServices_KimlikNoIleNufusKayitOrnegiSorgula_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="YetkiListesi">
+      <wsdl:input wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/YetkiListesi" message="tns:IKpsServices_YetkiListesi_InputMessage"/>
+      <wsdl:output wsaw:Action="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/YetkiListesiResponse" message="tns:IKpsServices_YetkiListesi_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS2007FederationHttpBinding_IKpsServices" type="tns:IKpsServices">
+    <wsp:PolicyReference URI="#WS2007FederationHttpBinding_IKpsServices_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="BilesikKisiSorgula">
+      <soap12:operation soapAction="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiSorgula" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BilesikKisiveAdresSorgula">
+      <soap12:operation soapAction="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgula" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TcKimlikNoSorgula">
+      <soap12:operation soapAction="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/TcKimlikNoSorgula" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KimlikNoIleAdresBilgisiSorgula">
+      <soap12:operation soapAction="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/KimlikNoIleAdresBilgisiSorgula" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AileBireyleriSorgula">
+      <soap12:operation soapAction="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/AileBireyleriSorgula" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KimlikNoIleNufusKayitOrnegiSorgula">
+      <soap12:operation soapAction="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/KimlikNoIleNufusKayitOrnegiSorgula" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YetkiListesi">
+      <soap12:operation soapAction="https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/YetkiListesi" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KpsServices">
+    <wsdl:port name="WS2007FederationHttpBinding_IKpsServices" binding="tns:WS2007FederationHttpBinding_IKpsServices">
+      <soap12:address location="https://kpsv2test.saglik.gov.tr/Router/RoutingService.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://kpsv2test.saglik.gov.tr/Router/RoutingService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

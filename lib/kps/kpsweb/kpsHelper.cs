@@ -2,8 +2,7 @@ using System;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using System.Text;
-using KPSRequestSample;
-
+ 
 namespace kpsweb
 {
     public class KpsService
@@ -35,37 +34,9 @@ namespace kpsweb
             Console.WriteLine(username+ "------------------");
             //send request to kps service with test user
             var result = kpsRequestHelper.BilesikKisiveAdresSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
-                string ad1 = result.GetElementsByTagName("DogumTarih")[0].InnerText;
-             Console.WriteLine("sade -----------"+ad1);
-            var maviKartNode = result.GetElementsByTagName("MaviKartliKisiKutukleri");
-            var tcNode = result.GetElementsByTagName("TCVatandasiKisiKutukleri");
-            var yabanciNode = result.GetElementsByTagName("YabanciKisiKutukleri");
-
-            if ((maviKartNode.Count > 0 && !maviKartNode[0].InnerXml.HasEmpty()) ||
-                (tcNode.Count > 0 && !tcNode[0].InnerXml.HasEmpty()) ||
-                (yabanciNode.Count > 0 && !yabanciNode[0].InnerXml.HasEmpty())
-            )
-            {
-                string ad = result.GetElementsByTagName("AcikAdres")[0].InnerText;
-                string soyad = result.GetElementsByTagName("Soyad")[0].InnerText;
-                Console.WriteLine(string.Format("{0}-{1} {2}", sorgulanacakKimliNo, ad, soyad));
-                Console.WriteLine(result);
-                var logPath = System.IO.Path.GetTempFileName();
-                using (var writer = File.CreateText(logPath))
-                {
-                    writer.WriteLine(result); //or .Write(), if you wish
-                }
-               
-                Console.WriteLine("---------------------\n\n");
-                Console.WriteLine("---------------------\n\n");
-                Console.WriteLine("---------------------\n\n");
-            }
-            else
-            {
-                Console.WriteLine("Kişi Bulunamadı");
-                Console.WriteLine("---------------------\n\n");
-            }
-
+              
+               Console.WriteLine(result+result.Soyad);
+              
           
             
             
