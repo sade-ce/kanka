@@ -1,0 +1,314 @@
+{
+	"Envelope": {
+		"Header": {
+			"Action": {
+				"_s:mustUnderstand": "1",
+				"__prefix": "a",
+				"__text": "https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgulaResponse"
+			},
+			"RelatesTo": {
+				"__prefix": "a",
+				"__text": "urn:uuid:1ebba2d4-ac1f-4b4d-b6a5-a2d47b6c9b84"
+			},
+			"Security": {
+				"Timestamp": {
+					"Created": {
+						"__prefix": "u",
+						"__text": "2019-06-28T08:02:00.385Z"
+					},
+					"Expires": {
+						"__prefix": "u",
+						"__text": "2019-06-28T08:07:00.385Z"
+					},
+					"_u:Id": "_0",
+					"_xmlns:u": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+					"__prefix": "u"
+				},
+				"_s:mustUnderstand": "1",
+				"_xmlns:o": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+				"__prefix": "o"
+			},
+			"__prefix": "s"
+		},
+		"Body": {
+			"BilesikKisiveAdresSorgulaResponse": {
+				"BilesikKisiveAdresSorgulaResult": {
+					"HataBilgisi": {
+						"_i:nil": "true"
+					},
+					"Sonuc": {
+						"AdresBilgisi": {
+							"AcikAdres": "ZÜBEYDE HANIM MAH. 1502. SK. KAT:0 BLOK  NO: 87  İÇ KAPI NO: 1 SULTANGAZİ / İSTANBUL",
+							"AdresNo": "2118420765",
+							"AdresTip": {
+								"Aciklama": "İl/İlçe Merkezi",
+								"Kod": "1"
+							},
+							"BeldeAdresi": {
+								"_i:nil": "true"
+							},
+							"BeyanTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"BeyandaBulunanKimlikNo": {
+								"_i:nil": "true"
+							},
+							"HataBilgisi": {
+								"_i:nil": "true"
+							},
+							"IlIlceMerkezAdresi": {
+								"BagimsizBolumDurum": {
+									"Aciklama": "Bilinmeyen",
+									"Kod": "1"
+								},
+								"BagimsizBolumTipi": {
+									"Aciklama": "Özel",
+									"Kod": "2"
+								},
+								"BinaAda": "-",
+								"BinaBlokAdi": "KAT:0",
+								"BinaDurum": {
+									"Aciklama": "Bilinmeyen",
+									"Kod": "1"
+								},
+								"BinaKodu": "17895217",
+								"BinaNo": "277674511",
+								"BinaNumaratajTipi": {
+									"Aciklama": "Bina Ana Giriş",
+									"Kod": "1"
+								},
+								"BinaPafta": {
+									"_i:nil": "true"
+								},
+								"BinaParsel": "-",
+								"BinaSiteAdi": {
+									"_i:nil": "true"
+								},
+								"BinaYapiTipi": {
+									"Aciklama": "Mesken",
+									"Kod": "1"
+								},
+								"Csbm": "1502. SK.",
+								"CsbmKodu": "783317",
+								"DisKapiNo": "87",
+								"HataBilgisi": {
+									"_i:nil": "true"
+								},
+								"IcKapiNo": "1",
+								"Il": "İSTANBUL",
+								"IlKodu": "34",
+								"Ilce": "SULTANGAZİ",
+								"IlceKodu": "2055",
+								"KatNo": {
+									"_i:nil": "true"
+								},
+								"Mahalle": "ZÜBEYDE HANIM MAH.",
+								"MahalleKodu": "40468",
+								"TapuBagimsizBolumNo": {
+									"_i:nil": "true"
+								},
+								"YapiKullanimAmac": {
+									"Aciklama": "Mesken",
+									"Kod": "1110"
+								},
+								"YolAltiKatSayisi": {
+									"_i:nil": "true"
+								},
+								"YolUstuKatSayisi": {
+									"_i:nil": "true"
+								}
+							},
+							"KoyAdresi": {
+								"_i:nil": "true"
+							},
+							"TasinmaTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"TescilTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"YurtDisiAdresi": {
+								"_i:nil": "true"
+							}
+						},
+						"HataBilgisi": {
+							"_i:nil": "true"
+						},
+						"KimlikNo": "34435101438",
+						"MaviKartliKisiKutukleri": {
+							"HataBilgisi": {
+								"_i:nil": "true"
+							},
+							"KisiBilgisi": {
+								"AnneTCKimlikNo": "14902756644",
+								"BabaTCKimlikNo": "14386766450",
+								"DogumYerKod": "1101",
+								"DurumBilgisi": {
+									"Durum": {
+										"Aciklama": "Açık",
+										"Kod": "1"
+									},
+									"MedeniHal": {
+										"Aciklama": "Evli",
+										"Kod": "2"
+									},
+									"OlumTarih": {
+										"Ay": {
+											"_i:nil": "true"
+										},
+										"Gun": {
+											"_i:nil": "true"
+										},
+										"Yil": {
+											"_i:nil": "true"
+										}
+									}
+								},
+								"GercekKisiKimlikNo": {
+									"_i:nil": "true"
+								},
+								"HataBilgisi": {
+									"_i:nil": "true"
+								},
+								"KazanilanTCKimlikNo": {
+									"_i:nil": "true"
+								},
+								"KimlikNo": "34435101438",
+								"TemelBilgisi": {
+									"Ad": "SAMED EMRE",
+									"AnneAd": "GÜLİZAR",
+									"BabaAd": "MUSTAFA",
+									"Cinsiyet": {
+										"Aciklama": "Erkek",
+										"Kod": "1"
+									},
+									"DogumTarih": {
+										"Ay": "6",
+										"Gun": "18",
+										"Yil": "1963"
+									},
+									"DogumYer": "KADIYUSUF",
+									"Soyad": "UYGUR"
+								},
+								"Ulke": {
+									"Aciklama": "ALMANYA FEDERAL CUMHURİYETİ",
+									"Kod": "9893"
+								}
+							},
+							"MaviKartBilgisi": {
+								"Ad": {
+									"_i:nil": "true"
+								},
+								"AnneAd": {
+									"_i:nil": "true"
+								},
+								"BabaAd": {
+									"_i:nil": "true"
+								},
+								"Birim": {
+									"_i:nil": "true"
+								},
+								"Cinsiyet": {
+									"_i:nil": "true"
+								},
+								"DogumTarih": {
+									"Ay": {
+										"_i:nil": "true"
+									},
+									"Gun": {
+										"_i:nil": "true"
+									},
+									"Yil": {
+										"_i:nil": "true"
+									}
+								},
+								"DogumYer": {
+									"_i:nil": "true"
+								},
+								"DogumYerKod": {
+									"_i:nil": "true"
+								},
+								"HataBilgisi": {
+									"Aciklama": "Aradığınız kriterlere uygun kayıt bulunamadı.",
+									"Kod": "2"
+								},
+								"KartKayitNo": {
+									"_i:nil": "true"
+								},
+								"KimlikNo": "34435101438",
+								"MedeniHal": {
+									"_i:nil": "true"
+								},
+								"No": {
+									"_i:nil": "true"
+								},
+								"OncekiSoyad": {
+									"_i:nil": "true"
+								},
+								"Seri": {
+									"_i:nil": "true"
+								},
+								"Soyad": {
+									"_i:nil": "true"
+								},
+								"Uyruk": {
+									"_i:nil": "true"
+								},
+								"VerilisNeden": {
+									"_i:nil": "true"
+								},
+								"VerilmeTarih": {
+									"Ay": {
+										"_i:nil": "true"
+									},
+									"Gun": {
+										"_i:nil": "true"
+									},
+									"Yil": {
+										"_i:nil": "true"
+									}
+								}
+							}
+						},
+						"TCVatandasiKisiKutukleri": {
+							"_i:nil": "true"
+						},
+						"YabanciKisiKutukleri": {
+							"_i:nil": "true"
+						}
+					},
+					"_xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+				},
+				"_xmlns": "https://www.saglik.gov.tr/KPS/01/01/2017"
+			},
+			"__prefix": "s"
+		},
+		"_xmlns:s": "http://www.w3.org/2003/05/soap-envelope",
+		"_xmlns:a": "http://www.w3.org/2005/08/addressing",
+		"__prefix": "s"
+	}
+}

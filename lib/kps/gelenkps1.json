@@ -1,0 +1,145 @@
+{
+	"Envelope": {
+		"Header": {
+			"Action": {
+				"_s:mustUnderstand": "1",
+				"__prefix": "a",
+				"__text": "https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgulaResponse"
+			},
+			"RelatesTo": {
+				"__prefix": "a",
+				"__text": "urn:uuid:3268aafc-05b2-4754-85eb-0637fd558194"
+			},
+			"Security": {
+				"Timestamp": {
+					"Created": {
+						"__prefix": "u",
+						"__text": "2019-06-28T07:51:13.915Z"
+					},
+					"Expires": {
+						"__prefix": "u",
+						"__text": "2019-06-28T07:56:13.915Z"
+					},
+					"_u:Id": "_0",
+					"_xmlns:u": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+					"__prefix": "u"
+				},
+				"_s:mustUnderstand": "1",
+				"_xmlns:o": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+				"__prefix": "o"
+			},
+			"__prefix": "s"
+		},
+		"Body": {
+			"BilesikKisiveAdresSorgulaResponse": {
+				"BilesikKisiveAdresSorgulaResult": {
+					"HataBilgisi": {
+						"_i:nil": "true"
+					},
+					"Sonuc": {
+						"AdresBilgisi": {
+							"_i:nil": "true"
+						},
+						"HataBilgisi": {
+							"_i:nil": "true"
+						},
+						"KimlikNo": "23671454620",
+						"MaviKartliKisiKutukleri": {
+							"_i:nil": "true"
+						},
+						"TCVatandasiKisiKutukleri": {
+							"GeciciKimlikBilgisi": {
+								"_i:nil": "true"
+							},
+							"HataBilgisi": {
+								"_i:nil": "true"
+							},
+							"KisiBilgisi": {
+								"AnneTCKimlikNo": "28147304492",
+								"BabaTCKimlikNo": "22141511658",
+								"DogumYerKod": {
+									"_i:nil": "true"
+								},
+								"DurumBilgisi": {
+									"Din": {
+										"_i:nil": "true"
+									},
+									"Durum": {
+										"Aciklama": "Vatandaşlıktan Çıkma",
+										"Kod": "5"
+									},
+									"MedeniHal": {
+										"Aciklama": "Evli",
+										"Kod": "2"
+									},
+									"OlumTarih": {
+										"Ay": {
+											"_i:nil": "true"
+										},
+										"Gun": {
+											"_i:nil": "true"
+										},
+										"Yil": {
+											"_i:nil": "true"
+										}
+									}
+								},
+								"HataBilgisi": {
+									"_i:nil": "true"
+								},
+								"KayitYeriBilgisi": {
+									"AileSiraNo": "26",
+									"BireySiraNo": "12",
+									"Cilt": {
+										"Aciklama": "YEŞİLYUVA",
+										"Kod": "15"
+									},
+									"Il": {
+										"Aciklama": "Kastamonu",
+										"Kod": "37"
+									},
+									"Ilce": {
+										"Aciklama": "Abana",
+										"Kod": "1101"
+									}
+								},
+								"TCKimlikNo": "23671454620",
+								"TemelBilgisi": {
+									"Ad": "CEMİL",
+									"AnneAd": "NAZİKE",
+									"BabaAd": "MUSTAFA",
+									"Cinsiyet": {
+										"Aciklama": "Erkek",
+										"Kod": "1"
+									},
+									"DogumTarih": {
+										"Ay": "11",
+										"Gun": "10",
+										"Yil": "1957"
+									},
+									"DogumYer": "YAYLAS",
+									"Soyad": "KARAKAŞ"
+								}
+							},
+							"NufusCuzdaniBilgisi": {
+								"_i:nil": "true"
+							},
+							"TCKKBilgisi": {
+								"_i:nil": "true"
+							}
+						},
+						"YabanciKisiKutukleri": {
+							"_i:nil": "true"
+						}
+					},
+					"_xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+				},
+				"_xmlns": "https://www.saglik.gov.tr/KPS/01/01/2017"
+			},
+			"__prefix": "s"
+		},
+		"_xmlns:s": "http://www.w3.org/2003/05/soap-envelope",
+		"_xmlns:a": "http://www.w3.org/2005/08/addressing",
+		"__prefix": "s"
+	}
+}

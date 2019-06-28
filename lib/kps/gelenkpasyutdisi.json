@@ -1,0 +1,277 @@
+{
+	"Envelope": {
+		"Header": {
+			"Action": {
+				"_s:mustUnderstand": "1",
+				"__prefix": "a",
+				"__text": "https://www.saglik.gov.tr/KPS/01/01/2017/IKpsServices/BilesikKisiveAdresSorgulaResponse"
+			},
+			"RelatesTo": {
+				"__prefix": "a",
+				"__text": "urn:uuid:7794371a-d548-4d7f-955f-a3ca8292a6d3"
+			},
+			"Security": {
+				"Timestamp": {
+					"Created": {
+						"__prefix": "u",
+						"__text": "2019-06-28T07:56:43.550Z"
+					},
+					"Expires": {
+						"__prefix": "u",
+						"__text": "2019-06-28T08:01:43.550Z"
+					},
+					"_u:Id": "_0",
+					"_xmlns:u": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+					"__prefix": "u"
+				},
+				"_s:mustUnderstand": "1",
+				"_xmlns:o": "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+				"__prefix": "o"
+			},
+			"__prefix": "s"
+		},
+		"Body": {
+			"BilesikKisiveAdresSorgulaResponse": {
+				"BilesikKisiveAdresSorgulaResult": {
+					"HataBilgisi": {
+						"_i:nil": "true"
+					},
+					"Sonuc": {
+						"AdresBilgisi": {
+							"AcikAdres": {
+								"_i:nil": "true"
+							},
+							"AdresNo": "0",
+							"AdresTip": {
+								"Aciklama": "Yurt Dışı Adresi",
+								"Kod": "4"
+							},
+							"BeldeAdresi": {
+								"_i:nil": "true"
+							},
+							"BeyanTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"BeyandaBulunanKimlikNo": {
+								"_i:nil": "true"
+							},
+							"HataBilgisi": {
+								"_i:nil": "true"
+							},
+							"IlIlceMerkezAdresi": {
+								"_i:nil": "true"
+							},
+							"KoyAdresi": {
+								"_i:nil": "true"
+							},
+							"TasinmaTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"TescilTarihi": {
+								"Ay": {
+									"_i:nil": "true"
+								},
+								"Gun": {
+									"_i:nil": "true"
+								},
+								"Yil": {
+									"_i:nil": "true"
+								}
+							},
+							"YurtDisiAdresi": {
+								"DisTemsDuzeltmeBeyanTarih": {
+									"_i:nil": "true"
+								},
+								"DisTemsDuzeltmeKararTarih": {
+									"_i:nil": "true"
+								},
+								"DisTemsDuzeltmeNeden": {
+									"_i:nil": "true"
+								},
+								"DisTemsilcilik": {
+									"_i:nil": "true"
+								},
+								"HataBilgisi": {
+									"_i:nil": "true"
+								},
+								"YabanciAdres": "LEİNİNGERSTR.60\n67269",
+								"YabanciSehir": "GRÜNSTADT",
+								"YabanciUlke": {
+									"Aciklama": "ALMANYA FEDERAL CUMHURİYETİ",
+									"Kod": "9893"
+								}
+							}
+						},
+						"HataBilgisi": {
+							"_i:nil": "true"
+						},
+						"KimlikNo": "16804683646",
+						"MaviKartliKisiKutukleri": {
+							"HataBilgisi": {
+								"_i:nil": "true"
+							},
+							"KisiBilgisi": {
+								"AnneTCKimlikNo": "33310127044",
+								"BabaTCKimlikNo": "14257770654",
+								"DogumYerKod": "1101",
+								"DurumBilgisi": {
+									"Durum": {
+										"Aciklama": "Açık",
+										"Kod": "1"
+									},
+									"MedeniHal": {
+										"Aciklama": "Evli",
+										"Kod": "2"
+									},
+									"OlumTarih": {
+										"Ay": {
+											"_i:nil": "true"
+										},
+										"Gun": {
+											"_i:nil": "true"
+										},
+										"Yil": {
+											"_i:nil": "true"
+										}
+									}
+								},
+								"GercekKisiKimlikNo": {
+									"_i:nil": "true"
+								},
+								"HataBilgisi": {
+									"_i:nil": "true"
+								},
+								"KazanilanTCKimlikNo": {
+									"_i:nil": "true"
+								},
+								"KimlikNo": "16804683646",
+								"TemelBilgisi": {
+									"Ad": "MURAT",
+									"AnneAd": "AYŞE",
+									"BabaAd": "YURDAKUL",
+									"Cinsiyet": {
+										"Aciklama": "Erkek",
+										"Kod": "1"
+									},
+									"DogumTarih": {
+										"Ay": "6",
+										"Gun": "30",
+										"Yil": "1978"
+									},
+									"DogumYer": "ABANA",
+									"Soyad": "ÜÇKAYABAŞI"
+								},
+								"Ulke": {
+									"Aciklama": "ALMANYA FEDERAL CUMHURİYETİ",
+									"Kod": "9893"
+								}
+							},
+							"MaviKartBilgisi": {
+								"Ad": {
+									"_i:nil": "true"
+								},
+								"AnneAd": {
+									"_i:nil": "true"
+								},
+								"BabaAd": {
+									"_i:nil": "true"
+								},
+								"Birim": {
+									"_i:nil": "true"
+								},
+								"Cinsiyet": {
+									"_i:nil": "true"
+								},
+								"DogumTarih": {
+									"Ay": {
+										"_i:nil": "true"
+									},
+									"Gun": {
+										"_i:nil": "true"
+									},
+									"Yil": {
+										"_i:nil": "true"
+									}
+								},
+								"DogumYer": {
+									"_i:nil": "true"
+								},
+								"DogumYerKod": {
+									"_i:nil": "true"
+								},
+								"HataBilgisi": {
+									"Aciklama": "Aradığınız kriterlere uygun kayıt bulunamadı.",
+									"Kod": "2"
+								},
+								"KartKayitNo": {
+									"_i:nil": "true"
+								},
+								"KimlikNo": "16804683646",
+								"MedeniHal": {
+									"_i:nil": "true"
+								},
+								"No": {
+									"_i:nil": "true"
+								},
+								"OncekiSoyad": {
+									"_i:nil": "true"
+								},
+								"Seri": {
+									"_i:nil": "true"
+								},
+								"Soyad": {
+									"_i:nil": "true"
+								},
+								"Uyruk": {
+									"_i:nil": "true"
+								},
+								"VerilisNeden": {
+									"_i:nil": "true"
+								},
+								"VerilmeTarih": {
+									"Ay": {
+										"_i:nil": "true"
+									},
+									"Gun": {
+										"_i:nil": "true"
+									},
+									"Yil": {
+										"_i:nil": "true"
+									}
+								}
+							}
+						},
+						"TCVatandasiKisiKutukleri": {
+							"_i:nil": "true"
+						},
+						"YabanciKisiKutukleri": {
+							"_i:nil": "true"
+						}
+					},
+					"_xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+				},
+				"_xmlns": "https://www.saglik.gov.tr/KPS/01/01/2017"
+			},
+			"__prefix": "s"
+		},
+		"_xmlns:s": "http://www.w3.org/2003/05/soap-envelope",
+		"_xmlns:a": "http://www.w3.org/2005/08/addressing",
+		"__prefix": "s"
+	}
+}
