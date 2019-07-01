@@ -1,3 +1,5 @@
+using System;
+
 namespace kpsweb
 {
 public class BilesikKisiveAdresSorgulaModel{ 
@@ -7,7 +9,7 @@ public string Soyad { get; set; }
 public string AnneAd { get; set; }
 public string BabaAd { get; set; }
 public string Cinsiyet { get; set; }
-public string    DogumTarih { get; set; }
+public DateTime    DogumTarih { get; set; }
 public string DogumYer { get; set; }
 public string OlumTarih { get; set; }
 public string MedeniHal { get; set; }

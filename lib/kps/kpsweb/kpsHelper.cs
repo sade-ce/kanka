@@ -22,7 +22,7 @@ namespace kpsweb
             var sorgulayanConfig = Configuration["appSettings:SorgulayanKimlikNo"];
             Console.WriteLine(usernameConfig);
 
-            string tcNo = "10711897622";
+            string tcNo = "10774881040";
 
             KPSRequestHelper kpsRequestHelper = new KPSRequestHelper();
             long sorgulayanKimlikNo;

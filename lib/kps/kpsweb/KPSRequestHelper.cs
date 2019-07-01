@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Xml;
+using ExtensionMethods;
 
 namespace kpsweb
 {
@@ -141,7 +142,7 @@ namespace kpsweb
             model.AnneAd = result.GetElementsByTagName("AnneAd")[0].InnerText;
             model.BabaAd = result.GetElementsByTagName("BabaAd")[0].InnerText;
             model.Cinsiyet = result.GetElementsByTagName("Cinsiyet")[0].InnerText;
-            model.DogumTarih = result.GetElementsByTagName("DogumTarih")[0].InnerText;
+                     model.DogumTarih = GetElementsByTagDateHelper(result, "DogumTarih");
             model.DogumYer = result.GetElementsByTagName("DogumYer")[0].InnerText;
             model.AcikAdres = result.GetElementsByTagName("AcikAdres")[0].InnerText;
             model.AdresNo = result.GetElementsByTagName("AdresNo")[0].InnerText;
@@ -211,7 +212,7 @@ namespace kpsweb
             model.AnneAd = GetElementsByTagNameHelper(result, "AnneAd");
             model.BabaAd = GetElementsByTagNameHelper(result, "BabaAd");
             model.Cinsiyet = GetElementsByTagNameHelper(result, "Cinsiyet");
-            model.DogumTarih = GetElementsByTagNameHelper(result, "DogumTarih");
+            model.DogumTarih = GetElementsByTagDateHelper(result, "DogumTarih");
             model.DogumYer = GetElementsByTagNameHelper(result, "DogumYer");
             model.AcikAdres = GetElementsByTagNameHelper(result, "AcikAdres");
             model.AdresNo = GetElementsByTagNameHelper(result, "AdresNo");
@@ -389,6 +390,34 @@ namespace kpsweb
             {
                 return "";
             }
+
+        }
+
+        private DateTime GetElementsByTagDateHelper(XmlDocument root,string tag){
+                string mdate="";
+                var matches = root.GetElementsByTagName(tag);
+                   if (matches.Count > 0)
+                   {
+              
+               foreach (XmlNode xn in matches)
+               {
+                 string Yil = xn["Yil"].InnerText;
+                 string Ay = xn["Ay"].InnerText;
+                 string gun=xn["Gun"].InnerText;
+                 Console.WriteLine("Gelen Tarih: {0} {1}", Yil, Ay);
+                mdate=gun+"/"+Ay+"/"+Yil;
+                 
+
+               }
+               return mdate.ToDateTime(format:"d/M/yyyy");
+               }
+
+               else
+               {
+                   return new DateTime(1800,01,01);
+               }
+
+                  
 
         }
 

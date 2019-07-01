@@ -45,11 +45,11 @@ namespace kpsweb
             app.UseHttpsRedirection();
             app.UseMvc();
             
-         /*    KpsService ser=new KpsService(Configuration);
-            ser.Sorgula(); */
-              var mydate = "31/1/1996";
+            KpsService ser=new KpsService(Configuration);
+            ser.Sorgula();
+          /*     var mydate = "31/1/1996";
             var date = mydate.ToDateTime(format:"d/M/yyyy");
-            Console.WriteLine(date.ToString());
+            Console.WriteLine(date.ToString()); */
         }
     }
 }
