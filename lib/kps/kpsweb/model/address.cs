@@ -4,7 +4,7 @@ namespace kpsweb{
 
 public string PublicAddress { get; set; }
 public long AddressCode  { get; set; }
-public string Coubtry    { get; set; }
+public string Country    { get; set; }
 public long CountryCode { get; set; }
 public string District { get; set; }
 public string DistricCode { get; set; }
