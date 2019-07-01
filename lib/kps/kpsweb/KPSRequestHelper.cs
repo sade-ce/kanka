@@ -230,7 +230,7 @@ namespace kpsweb
             model.YabanciAdres = GetElementsByTagNameHelper(result, "YabanciAdres");
             model.YabanciSehir = GetElementsByTagNameHelper(result, "YabanciSehir");
             model.YabanciUlke = GetElementsByTagNameHelper(result, "YabanciUlke");
-            model.OlumTarih = GetElementsByTagNameHelper(result, "OlumTarih");
+            model.OlumTarih = GetElementsByTagDateHelper(result, "OlumTarih");
             model.MedeniHal = GetElementsByTagNameHelper(result, "MedeniHal");
 
   
@@ -393,7 +393,7 @@ namespace kpsweb
 
         }
 
-        private DateTime GetElementsByTagDateHelper(XmlDocument root,string tag){
+        private DateTime? GetElementsByTagDateHelper(XmlDocument root,string tag){
                 string mdate="";
                 var matches = root.GetElementsByTagName(tag);
                    if (matches.Count > 0)
@@ -409,12 +409,18 @@ namespace kpsweb
                  
 
                }
+
+               //  gelen date verisi birşekilde boş ise 
+               if (mdate == "//")
+               {
+                   return null;
+               }
                return mdate.ToDateTime(format:"d/M/yyyy");
                }
 
                else
                {
-                   return new DateTime(1800,01,01);
+                   return null;
                }
 
                   

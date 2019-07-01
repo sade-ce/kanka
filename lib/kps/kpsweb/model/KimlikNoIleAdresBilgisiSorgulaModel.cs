@@ -9,9 +9,9 @@ public string Soyad { get; set; }
 public string AnneAd { get; set; }
 public string BabaAd { get; set; }
 public string Cinsiyet { get; set; }
-public DateTime    DogumTarih { get; set; }
+public DateTime?    DogumTarih { get; set; }
 public string DogumYer { get; set; }
-public string OlumTarih { get; set; }
+public DateTime? OlumTarih { get; set; }
 public string MedeniHal { get; set; }
 public string AcikAdres { get; set; }
 public string AdresNo { get; set; }
