@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ExtensionMethods;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -44,8 +45,11 @@ namespace kpsweb
             app.UseHttpsRedirection();
             app.UseMvc();
             
-            KpsService ser=new KpsService(Configuration);
-            ser.Sorgula();
+         /*    KpsService ser=new KpsService(Configuration);
+            ser.Sorgula(); */
+              var mydate = "31/1/1996";
+            var date = mydate.ToDateTime(format:"d/M/yyyy");
+            Console.WriteLine(date.ToString());
         }
     }
 }
