@@ -222,6 +222,7 @@ namespace kpsAngular
             model.Address.TownCode = GetElementsLongHelper(result, "MahalleKodu");
             model.MotherTc = GetElementsLongHelper(result, "AnneTCKimlikNo");
             model.FatherTc = GetElementsLongHelper(result, "BabaTCKimlikNo");
+            model.status=GetElemenetFirstchild(result,"Durum");
 /*             var k=GetElementsByTagNameHelper(result, "BabaTcKimlikNo");
  */            
             model.Address.ForeignAddress = GetElementsByTagNameHelper(result, "YabanciAdres");
