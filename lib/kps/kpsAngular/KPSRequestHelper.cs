@@ -199,14 +199,15 @@ namespace kpsAngular
 
             
             Patient model = new Patient();
-             model.Name = GetElementsByTagNameHelper(result, "Ad");
+            model.KimlikNo=GetElementsLongHelper(result, "KimlikNo");
+            model.Name = GetElementsByTagNameHelper(result, "Ad");
             model.Surname = GetElementsByTagNameHelper(result, "Soyad");
             model.MotherName = GetElementsByTagNameHelper(result, "AnneAd");
             model.FatherName = GetElementsByTagNameHelper(result, "BabaAd");
-            model.sex = GetElementsByTagNameHelper(result, "Cinsiyet");
-            model.Married=GetElementsByTagNameHelper(result, "MedeniHal");
-            model.Birthday = GetElementsByTagDateHelper(result, "DogumTarih");
-            model.BirthPlace = GetElementsByTagNameHelper(result, "DogumYer");
+            model.sex = GetElemenetFirstchild(result, "Cinsiyet");
+            model.Married=GetElemenetFirstchild(result, "MedeniHal");
+            model.Birth_at = GetElementsByTagDateHelper(result, "DogumTarih");
+            model.Birth_in = GetElementsByTagNameHelper(result, "DogumYer");
             model.DeathDate=GetElementsByTagDateHelper(result, "OlumTarih");
             model.Address.PublicAddress = GetElementsByTagNameHelper(result, "AcikAdres");
              model.Address.AddressCode = GetElementsLongHelper(result, "AdresNo");
@@ -219,8 +220,10 @@ namespace kpsAngular
              model.Address.VillageCode = GetElementsByTagNameHelper(result, "KoyAdresi");
             model.Address.Town = GetElementsByTagNameHelper(result, "Mahalle");
             model.Address.TownCode = GetElementsLongHelper(result, "MahalleKodu");
-            model.MotherTc = GetElementsLongHelper(result, "AnneTcKimlikNo");
-            model.FatherTc = GetElementsLongHelper(result, "BabaTcKimlikNo");
+            model.MotherTc = GetElementsLongHelper(result, "AnneTCKimlikNo");
+            model.FatherTc = GetElementsLongHelper(result, "BabaTCKimlikNo");
+/*             var k=GetElementsByTagNameHelper(result, "BabaTcKimlikNo");
+ */            
             model.Address.ForeignAddress = GetElementsByTagNameHelper(result, "YabanciAdres");
             model.Address.ForeignAddressCity = GetElementsByTagNameHelper(result, "YabanciSehir");
             model.Address.ForeignAddressCountry = GetElementsByTagNameHelper(result, "YabanciUlke");
@@ -390,11 +393,11 @@ namespace kpsAngular
             var matches = root.GetElementsByTagName(tag);
             if (matches.Count > 0){
                 var s= matches[0].InnerText; 
-/* String strValue =  matches[0].InnerText;
-long l1 = Convert.ToInt64(Convert.ToDecimal(strValue)); */
+String strValue =  matches[0].InnerText;
+long l1 = Convert.ToInt64(strValue);
 
                 /* return   l1; */
-                return (long) Convert.ToInt64( s);
+                return l1;
             }
                  
             else
@@ -404,6 +407,41 @@ long l1 = Convert.ToInt64(Convert.ToDecimal(strValue)); */
 
         }
 
+
+
+/*          
+
+gelen soap verisi asağıdaki gibi olduğu için  örneğin cekilen ilk MedeniHal xmlnode'undaki acıklama kısmındaki veriyi  almak için bu şekilde bir yol tercih ettik.
+                      "Durum": {
+										"Aciklama": "Ölüm",
+										"Kod": "3"
+									},
+									"MedeniHal": {
+										"Aciklama": "Bekâr",
+										"Kod": "1"
+									}, */
+ private string GetElemenetFirstchild(XmlDocument root,string tag){
+
+     string res="";
+     var matches = root.GetElementsByTagName(tag);
+     if (matches.Count > 0)
+         {
+             foreach (XmlNode xn in matches)
+               {
+
+                return xn["Aciklama"].InnerText; 
+               }
+         }
+         else{
+             return res;
+         }
+         return res;
+      
+ }
+
+
+
+// gelen date verisi  XmlDocument içindeki string yapısından datetime yapısına dönüştürür
 
         private DateTime? GetElementsByTagDateHelper(XmlDocument root,string tag){
                 string mdate="";
@@ -433,10 +471,7 @@ long l1 = Convert.ToInt64(Convert.ToDecimal(strValue)); */
                else
                {
                    return null;
-               }
-
-                  
-
+               } 
         }
 
     }

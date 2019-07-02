@@ -5,7 +5,7 @@ namespace kpsweb{
 
     public class Patient:BaseModel{
 
-
+        public long KimlikNo { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string MotherName { get; set; }

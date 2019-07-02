@@ -225,8 +225,8 @@ namespace kpsweb
             model.Koy = GetElementsByTagNameHelper(result, "Koy");
             model.Mahalle = GetElementsByTagNameHelper(result, "Mahalle");
             model.MahalleKodu = GetElementsByTagNameHelper(result, "MahalleKodu");
-            model.AnneTcKimlikNo = GetElementsByTagNameHelper(result, "AnneTcKimlikNo");
-            model.BabaTcKimlikNo = GetElementsByTagNameHelper(result, "BabaTcKimlikNo");
+            model.AnneTcKimlikNo = GetElementsByTagNameHelper(result, "AnneTCKimlikNo");
+            model.BabaTcKimlikNo = GetElementsByTagNameHelper(result, "BabaTCKimlikNo");
             model.YabanciAdres = GetElementsByTagNameHelper(result, "YabanciAdres");
             model.YabanciSehir = GetElementsByTagNameHelper(result, "YabanciSehir");
             model.YabanciUlke = GetElementsByTagNameHelper(result, "YabanciUlke");

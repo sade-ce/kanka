@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_.19.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="ClientApp/node_modules/@angular/animations" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/cli" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/common" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/compiler" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/compiler-cli" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/core" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/forms" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/http" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/platform-browser" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/platform-browser-dynamic" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/platform-server" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular/router" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@angular-devkit/build-angular" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@nguniversal/module-map-ngfactory-loader" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/@types" t="IncludeRecursive">
+        <e p="jasmine" t="IncludeRecursive" />
+        <e p="jasminewd2" t="IncludeRecursive" />
+        <e p="node" t="IncludeRecursive" />
+      </e>
+      <e p="ClientApp/node_modules/aspnet-prerendering" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/bootstrap" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/codelyzer" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/core-js" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/jasmine-core" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/jasmine-spec-reporter" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/jquery" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/karma" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/karma-chrome-launcher" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/karma-coverage-istanbul-reporter" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/karma-jasmine" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/karma-jasmine-html-reporter" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/node-sass" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/popper.js" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/protractor" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/rxjs" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/ts-node" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/tslint" t="IncludeRecursive" />
+      <e p="ClientApp/node_modules/zone.js" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>

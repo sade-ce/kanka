@@ -46,8 +46,8 @@ namespace kpsAngular
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-          KpsService ser=new KpsService(Configuration);
-            ser.Sorgula();
+        /*   KpsService ser=new KpsService(Configuration);
+            ser.Sorgula(); */
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

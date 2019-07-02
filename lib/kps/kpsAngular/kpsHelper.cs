@@ -15,14 +15,14 @@ namespace kpsAngular
         public IConfiguration Configuration { get; }
 
 
-        public void Sorgula()
+        public Patient Sorgula()
         {
             var usernameConfig = Configuration["appSettings:KpsUserName"];
             var passwordConfig = Configuration["appSettings:KpsPassword"];
             var sorgulayanConfig = Configuration["appSettings:SorgulayanKimlikNo"];
             Console.WriteLine(usernameConfig);
 
-            string tcNo = "15682723116";
+            string tcNo = "18304638676";
 
             KPSRequestHelper kpsRequestHelper = new KPSRequestHelper();
             long sorgulayanKimlikNo;
@@ -33,9 +33,9 @@ namespace kpsAngular
             string password = passwordConfig;
             Console.WriteLine(username+ "------------------");
             //send request to kps service with test user
-            var result = kpsRequestHelper.BilesikKisiveAdresSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
+            return  kpsRequestHelper.BilesikKisiveAdresSorgula(sorgulanacakKimliNo, sorgulayanKimlikNo, username, password);
               
-               Console.WriteLine(result+result.Name);
+               
               
           
             
